@@ -1,0 +1,4 @@
+guest
+true
+0
+false
