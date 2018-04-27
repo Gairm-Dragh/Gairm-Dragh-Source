@@ -11,9 +11,9 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+        static Color[] Colors = new Color[] { Color.red, Color.blue };
         //used on server to avoid assigning the same color to two player
-        static List<int> _colorInUse = new List<int>();
+        //static List<int> _colorInUse = new List<int>();
 
         public Button colorButton;
         public InputField nameInput;
@@ -251,36 +251,9 @@ namespace Prototype.NetworkLobby
         {
             int idx = System.Array.IndexOf(Colors, playerColor);
 
-            int inUseIdx = _colorInUse.IndexOf(idx);
-
             if (idx < 0) idx = 0;
 
             idx = (idx + 1) % Colors.Length;
-
-            bool alreadyInUse = false;
-
-            do
-            {
-                alreadyInUse = false;
-                for (int i = 0; i < _colorInUse.Count; ++i)
-                {
-                    if (_colorInUse[i] == idx)
-                    {//that color is already in use
-                        alreadyInUse = true;
-                        idx = (idx + 1) % Colors.Length;
-                    }
-                }
-            }
-            while (alreadyInUse);
-
-            if (inUseIdx >= 0)
-            {//if we already add an entry in the colorTabs, we change it
-                _colorInUse[inUseIdx] = idx;
-            }
-            else
-            {//else we add it
-                _colorInUse.Add(idx);
-            }
 
             playerColor = Colors[idx];
         }
@@ -301,15 +274,6 @@ namespace Prototype.NetworkLobby
 
             if (idx < 0)
                 return;
-
-            for (int i = 0; i < _colorInUse.Count; ++i)
-            {
-                if (_colorInUse[i] == idx)
-                {//that color is already in use
-                    _colorInUse.RemoveAt(i);
-                    break;
-                }
-            }
         }
     }
 }
