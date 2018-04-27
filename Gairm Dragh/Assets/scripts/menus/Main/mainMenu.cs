@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour { //this is used to run the main menu
 
     public void toList() {
-        SceneManager.LoadScene("list lobby");
+        SceneManager.LoadScene("lobby");
     }
 
     // Use this for initialization
