@@ -99,6 +99,7 @@
     <Compile Include="Assets\scripts\Combat\Dragon Info\Dragon.cs" />
     <Compile Include="Assets\scripts\Combat\Dragon Info\DragonGlobals.cs" />
     <Compile Include="Assets\scripts\Combat\Dragon Info\Type.cs" />
+    <Compile Include="Assets\scripts\Combat\combatGlobals.cs" />
     <Compile Include="Assets\scripts\Combat\player.cs" />
     <Compile Include="Assets\scripts\Combat\playerInfo.cs" />
     <Compile Include="Assets\scripts\gittesting.cs" />

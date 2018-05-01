@@ -19,6 +19,8 @@ namespace Prototype.NetworkLobby {
             else {
                 gamePlayer.GetComponent<playerInfo>().playerTeam = 2;
             }
+
+            Debug.Log("Passing info.");
         }
     }
 
