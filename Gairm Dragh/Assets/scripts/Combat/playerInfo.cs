@@ -10,6 +10,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     public player player; //The palyer itself
     string[] names = new string[100]; //All the random names
     Type[] allTypes = DragonGlobals.types; //Al the types
+    public GameObject processing;
 
     //creates a random team of dragons to initialize into a player
     public void randomTeam() {
@@ -164,24 +165,27 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam);
         Debug.Log("Player initialized");
 
-        //add the player to the lists
-        combatGlobals.players.Add(player);
-
-        if (player.team == 1) {
-            combatGlobals.team1.Add(player);
-        }
-        else {
-            combatGlobals.team2.Add(player);
-        }
+        
     }
 
     // Use this for initialization
     void Start() {
+        processing = GameObject.Find("background");
+
+        //add the player to the lists
+        processing.GetComponent<combatGlobals>().players.Add(player);
+
+        if (player.team == 1) {
+            processing.GetComponent<combatGlobals>().team1.Add(player);
+        }
+        else {
+            processing.GetComponent<combatGlobals>().team2.Add(player);
+        }
 
     }
 
     // Update is called once per frame
     void Update() {
-
+        
     }
 }

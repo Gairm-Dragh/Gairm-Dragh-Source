@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public static class combatGlobals{ //This is where the general variables are stored
+public class combatGlobals : MonoBehaviour {
     //all the players
-    public static List<player> players;
+    public List<player> players = new List<player>();
 
     //the teams
-    public static List<player> team1;
-    public static List<player> team2;
+    public List<player> team1 = new List<player>();
+    public List<player> team2 = new List<player>();
 }
