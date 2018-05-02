@@ -12,62 +12,8 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     Type[] allTypes = DragonGlobals.types; //Al the types
 
     //creates a random team of dragons to initialize into a player
-    void randomTeam() {
-
-        //names are random
-        string[] randomNames = new string[4];
-        randomNames[0] = names[Random.Range(0, 100)];
-        randomNames[1] = names[Random.Range(0, 100)];
-        randomNames[2] = names[Random.Range(0, 100)];
-        randomNames[3] = names[Random.Range(0, 100)];
-
-        //types are random
-        Type[] randomTypes = new Type[4];
-
-        randomTypes[0] = allTypes[Random.Range(0, allTypes.Length - 1)];
-        randomTypes[1] = allTypes[Random.Range(0, allTypes.Length - 1)];
-        randomTypes[2] = allTypes[Random.Range(0, allTypes.Length - 1)];
-        randomTypes[3] = allTypes[Random.Range(0, allTypes.Length - 1)];
-
-        //levels are all set to 50 (adult)
-        int[] levels = new int[4];
-
-        for (int i = 0; i < levels.Length; i++) {
-            levels[i] = 50;
-        }
-
-        //IVs are semi-random
-        int[][] randomIVs = new int[4][];
-
-        for (int i = 0; i < randomIVs.Length; i++) {
-            randomIVs[i] = new int[6];
-
-            for (int j = 0; j < 6; j++) {
-                randomIVs[i][j] = Random.Range(10, 21);
-            }
-        }
-
-
-        //EVs are all set to 0
-        int[][] EVs = new int[4][];
-
-        for (int i = 0; i < EVs.Length; i++) {
-            EVs[i] = new int[6];
-
-            for (int j = 0; j < 6; j++) {
-                EVs[i][j] = 0;
-            }
-        }
-
-        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames);
-        Debug.Log("Player initialized");
-    }
-
-    // Use this for initialization
-    void Start() {
-        Debug.Log("The scene started.");
-
-        //populating the names for random names
+    public void randomTeam() {
+        //setting the names
         names[1] = "Grilban";
         names[2] = "Kaynno";
         names[3] = "Grimenth";
@@ -169,7 +115,59 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         names[99] = "Ellolu";
         names[0] = "Favnyrat";
 
-        randomTeam();
+
+        //names are random
+        string[] randomNames = new string[4];
+        randomNames[0] = names[Random.Range(0, 100)];
+        randomNames[1] = names[Random.Range(0, 100)];
+        randomNames[2] = names[Random.Range(0, 100)];
+        randomNames[3] = names[Random.Range(0, 100)];
+
+        //types are random
+        Type[] randomTypes = new Type[4];
+
+        randomTypes[0] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[1] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[2] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[3] = allTypes[Random.Range(0, allTypes.Length - 1)];
+
+        //levels are all set to 50 (adult)
+        int[] levels = new int[4];
+
+        for (int i = 0; i < levels.Length; i++) {
+            levels[i] = 50;
+        }
+
+        //IVs are semi-random
+        int[][] randomIVs = new int[4][];
+
+        for (int i = 0; i < randomIVs.Length; i++) {
+            randomIVs[i] = new int[6];
+
+            for (int j = 0; j < 6; j++) {
+                randomIVs[i][j] = Random.Range(10, 21);
+            }
+        }
+
+
+        //EVs are all set to 0
+        int[][] EVs = new int[4][];
+
+        for (int i = 0; i < EVs.Length; i++) {
+            EVs[i] = new int[6];
+
+            for (int j = 0; j < 6; j++) {
+                EVs[i][j] = 0;
+            }
+        }
+
+        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames);
+        Debug.Log("Player initialized");
+    }
+
+    // Use this for initialization
+    void Start() {
+        Debug.Log("The scene started.");
     }
 
     // Update is called once per frame
