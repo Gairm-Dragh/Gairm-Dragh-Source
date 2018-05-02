@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public static class combatGlobals{ //This is where the general variables are stored
-    //the teams
-    [SyncVar]
-    public static player[] team1 = new player[4];
+    //all the players
+    public static List<player> players;
 
-    [SyncVar]
-    public static player[] team2 = new player[4];
+    //the teams
+    public static List<player> team1;
+    public static List<player> team2;
 }

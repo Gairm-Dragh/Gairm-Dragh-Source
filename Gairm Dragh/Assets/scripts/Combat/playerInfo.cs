@@ -161,13 +161,23 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             }
         }
 
-        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames);
+        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam);
         Debug.Log("Player initialized");
+
+        //add the player to the lists
+        combatGlobals.players.Add(player);
+
+        if (player.team == 1) {
+            combatGlobals.team1.Add(player);
+        }
+        else {
+            combatGlobals.team2.Add(player);
+        }
     }
 
     // Use this for initialization
     void Start() {
-        Debug.Log("The scene started.");
+
     }
 
     // Update is called once per frame

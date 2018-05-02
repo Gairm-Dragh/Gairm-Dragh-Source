@@ -6,8 +6,9 @@ public class player { //this class is for storing the data for each player in th
     public Dragon dragon1, dragon2, dragon3, dragon4; //The dragons the player has
     public int playerNum; //The position number of the player, needed for file searching
     public string name;
+    public int team;
 
-    public player(string nam, Type[] types, int[] levels, int[][] EVs, int[][] IVs, string[] names) {
+    public player(string nam, Type[] types, int[] levels, int[][] EVs, int[][] IVs, string[] names, int tem) {
 
         //initialize the dragons for this player, there will always be 4
         dragon1 = new Dragon(types[0], levels[0], EVs[0], IVs[0], names[0]);
@@ -15,6 +16,7 @@ public class player { //this class is for storing the data for each player in th
         dragon3 = new Dragon(types[2], levels[2], EVs[2], IVs[2], names[2]);
         dragon4 = new Dragon(types[3], levels[3], EVs[3], IVs[3], names[3]);
         name = nam;
+        team = tem;
     }
 
 }
