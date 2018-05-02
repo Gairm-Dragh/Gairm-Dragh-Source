@@ -20,7 +20,7 @@ namespace Prototype.NetworkLobby {
                 gamePlayer.GetComponent<playerInfo>().playerTeam = 2;
             }
 
-            Debug.Log("Passing info.");
+            DragonGlobals.initTypes();
         }
     }
 

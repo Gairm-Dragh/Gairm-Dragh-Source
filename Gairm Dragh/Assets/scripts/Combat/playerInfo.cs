@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class playerInfo : MonoBehaviour { //This class holds the information of a player
+public class playerInfo : NetworkBehaviour { //This class holds the information of a player
 
-    public string playerName;
-    public int playerTeam;
-    public player player;
-    string[] names = new string[100];
+    public string playerName; //The name of the player
+    public int playerTeam; //The team of the palyer
+    public player player; //The palyer itself
+    string[] names = new string[100]; //All the random names
+    Type[] allTypes = DragonGlobals.types; //Al the types
 
     //creates a random team of dragons to initialize into a player
     void randomTeam() {
+
         //names are random
         string[] randomNames = new string[4];
         randomNames[0] = names[Random.Range(0, 100)];
@@ -21,6 +24,11 @@ public class playerInfo : MonoBehaviour { //This class holds the information of 
         //types are random
         Type[] randomTypes = new Type[4];
 
+        randomTypes[0] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[1] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[2] = allTypes[Random.Range(0, allTypes.Length - 1)];
+        randomTypes[3] = allTypes[Random.Range(0, allTypes.Length - 1)];
+
         //levels are all set to 50 (adult)
         int[] levels = new int[4];
 
@@ -30,6 +38,15 @@ public class playerInfo : MonoBehaviour { //This class holds the information of 
 
         //IVs are semi-random
         int[][] randomIVs = new int[4][];
+
+        for (int i = 0; i < randomIVs.Length; i++) {
+            randomIVs[i] = new int[6];
+
+            for (int j = 0; j < 6; j++) {
+                randomIVs[i][j] = Random.Range(10, 21);
+            }
+        }
+
 
         //EVs are all set to 0
         int[][] EVs = new int[4][];
@@ -43,6 +60,7 @@ public class playerInfo : MonoBehaviour { //This class holds the information of 
         }
 
         player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames);
+        Debug.Log("Player initialized");
     }
 
     // Use this for initialization
