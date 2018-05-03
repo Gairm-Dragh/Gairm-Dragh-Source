@@ -174,6 +174,7 @@ namespace Prototype.NetworkLobby
         public void RemovePlayer(LobbyPlayer player)
         {
             player.RemovePlayer();
+            globals.players--;
         }
 
         public void SimpleBackClbk()
@@ -291,6 +292,8 @@ namespace Prototype.NetworkLobby
                     p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
                 }
             }
+
+            globals.players++;
 
             return obj;
         }

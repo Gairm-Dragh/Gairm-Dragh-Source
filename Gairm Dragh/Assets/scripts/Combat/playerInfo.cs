@@ -171,6 +171,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     // Use this for initialization
     void Start() {
         randomTeam();
+        Debug.Log(globals.players);
 
         processing = GameObject.Find("background");
 
