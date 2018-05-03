@@ -21,7 +21,7 @@ namespace Prototype.NetworkLobby {
             }
 
             DragonGlobals.initTypes();
-            //gamePlayer.GetComponent<playerInfo>().randomTeam();
+            Debug.Log("Hooked");
         }
     }
 
