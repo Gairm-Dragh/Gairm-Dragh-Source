@@ -186,6 +186,6 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
     // Update is called once per frame
     void Update() {
-        
+        Debug.Log("We're running stuff now.");
     }
 }
