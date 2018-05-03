@@ -307,10 +307,9 @@ namespace Prototype.NetworkLobby
                 {
                     p.RpcUpdateRemoveButton();
                     p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
+                    globals.players--;
                 }
             }
-
-            globals.players--;
         }
 
         public override void OnLobbyServerDisconnect(NetworkConnection conn)
