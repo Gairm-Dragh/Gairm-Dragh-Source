@@ -322,6 +322,7 @@ namespace Prototype.NetworkLobby
                 {
                     p.RpcUpdateRemoveButton();
                     p.ToggleJoinButton(numPlayers >= minPlayers);
+                    globals.players--;
                 }
             }
 
