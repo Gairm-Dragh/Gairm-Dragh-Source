@@ -21,7 +21,7 @@ namespace Prototype.NetworkLobby {
             }
 
             DragonGlobals.initTypes();
-            Debug.Log("Hooked");
+            Debug.Log("Hooked" + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
         }
     }
 

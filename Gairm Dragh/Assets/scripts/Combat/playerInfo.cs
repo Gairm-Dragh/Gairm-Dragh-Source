@@ -163,7 +163,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         }
 
         player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam);
-        Debug.Log("Player initialized");
+        Debug.Log("Player " + playerName + "initialized");
 
         
     }
@@ -171,6 +171,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     // Use this for initialization
     void Start() {
         randomTeam();
+
         processing = GameObject.Find("background");
 
         //add the player to the lists
