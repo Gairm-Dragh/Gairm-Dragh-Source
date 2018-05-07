@@ -66,28 +66,27 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
         //putting the moves in the array
         moves[0] = Bite;
         moves[1] = FeintAttack;
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
-        moves[2]
+        moves[3] = Crunch;
+        moves[4] = Thundershock;
+        moves[5] = Thunderbolt;
+        moves[6] = Thunder;
+        moves[7] = Ember;
+        moves[8] = Flamethrower;
+        moves[9] = Overheat;
+        moves[10] = VineWhip;
+        moves[11] = RazorLeaf;
+        moves[12] = MagicalLeaf;
+        moves[13] = LeafBlade;
+        moves[14] = Earthquake;
+        moves[15] = MudShot;
+        moves[16] = PoisonSting;
+        moves[17] = Acid;
+        moves[18] = Smite;
+        moves[19] = HolyWater;
+        moves[20] = Neutralize;
+        moves[21] = Unbalance;
+        moves[22] = HydroPump;
+        moves[23] = BubbleBeam;
+        moves[24] = HydroCannon;
     }
 }
