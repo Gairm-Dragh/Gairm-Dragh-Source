@@ -171,8 +171,8 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
     // Use this for initialization
     void Start() {
-        Debug.Log(host);
-        Debug.Log(globals.players);
+        //Debug.Log(host);
+        //Debug.Log(globals.players);
 
         processing = GameObject.Find("background");
 
@@ -188,6 +188,9 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             else {
                 processing.GetComponent<combatGlobals>().team2.Add(player);
             }
+
+            GameObject test = GameObject.Find("health-bar");
+            test.transform.position = new Vector3(0, 0, 0);
         }
 
         
@@ -195,6 +198,5 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
     // Update is called once per frame
     void Update() {
-        Debug.Log("We're running stuff now.");
     }
 }
