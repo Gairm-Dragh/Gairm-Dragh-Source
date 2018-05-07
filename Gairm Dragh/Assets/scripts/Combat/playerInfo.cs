@@ -184,7 +184,6 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         else {
             processing.GetComponent<combatGlobals>().team2.Add(player);
         }
-
     }
 
     // Update is called once per frame

@@ -20,8 +20,6 @@ namespace Prototype.NetworkLobby {
                 gamePlayer.GetComponent<playerInfo>().playerTeam = 2;
             }
 
-            DragonGlobals.initTypes();
-            DragonGlobals.initMoves();
             Debug.Log("Hooked" + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
         }
     }

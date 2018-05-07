@@ -9,4 +9,9 @@ public class combatGlobals : MonoBehaviour {
     //the teams
     public List<player> team1 = new List<player>();
     public List<player> team2 = new List<player>();
+
+    private void Start() {
+        DragonGlobals.initTypes();
+        DragonGlobals.initMoves();
+    }
 }
