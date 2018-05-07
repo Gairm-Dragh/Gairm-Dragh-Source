@@ -22,6 +22,7 @@ namespace Prototype.NetworkLobby {
 
             Debug.Log("Hooked" + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
             gamePlayer.GetComponent<playerInfo>().host = true;
+            gamePlayer.GetComponent<playerInfo>().randomTeam();
             Debug.Log(gamePlayer.GetComponent<playerInfo>().host);
         }
     }
