@@ -12,9 +12,10 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     Type[] allTypes = DragonGlobals.types; //Al the types
     public GameObject processing;
     public bool host = false; //whether or not the player is host
+    public GameObject test;
 
     [SyncVar]
-    GameObject test;
+    public Vector3 testPosition;
 
     //creates a random team of dragons to initialize into a player
     public void randomTeam() {
@@ -120,7 +121,6 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         names[99] = "Ellolu";
         names[0] = "Favnyrat";
 
-
         //names are random
         string[] randomNames = new string[4];
         randomNames[0] = names[Random.Range(0, 100)];
@@ -154,7 +154,6 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             }
         }
 
-
         //EVs are all set to 0
         int[][] EVs = new int[4][];
 
@@ -168,8 +167,6 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
         player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam);
         Debug.Log("Player " + playerName + "initialized");
-
-        
     }
 
     // Use this for initialization
@@ -192,14 +189,16 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             else {
                 processing.GetComponent<combatGlobals>().team2.Add(player);
             }
-
-            test.transform.position = new Vector3(0, 0, 0);
         }
-
-        
     }
 
     // Update is called once per frame
     void Update() {
+
+        if (host) {
+            testPosition = new Vector3(0, 0, 0);
+        }
+
+        test.transform.position = testPosition;
     }
 }
