@@ -10,7 +10,7 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
     public static Type Fire, Water, Earth, Air, Angelic, Demonic, Balance, Grass, Toxic; //The types
     public static Type[] types = new Type[9]; //array to hold all of the types
     public static Dragon[] dragons; //array of al the dragons, size will depend on how many players there are
-    public static move[] moves = new move[24];
+    public static move[] moves = new move[25];
 
     static public void initTypes() {
         //Initializing the types
