@@ -177,6 +177,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         processing = GameObject.Find("background");
 
         if (host) {
+            randomTeam();
 
             //add the player to the lists
             processing.GetComponent<combatGlobals>().players.Add(player);
