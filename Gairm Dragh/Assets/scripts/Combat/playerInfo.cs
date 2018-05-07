@@ -11,6 +11,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     string[] names = new string[100]; //All the random names
     Type[] allTypes = DragonGlobals.types; //Al the types
     public GameObject processing;
+    public bool host = false; //whether or not the player is host
 
     //creates a random team of dragons to initialize into a player
     public void randomTeam() {

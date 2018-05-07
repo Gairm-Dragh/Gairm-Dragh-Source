@@ -21,6 +21,8 @@ namespace Prototype.NetworkLobby {
             }
 
             Debug.Log("Hooked" + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
+            gamePlayer.GetComponent<playerInfo>().host = true;
+            Debug.Log(gamePlayer.GetComponent<playerInfo>().host);
         }
     }
 

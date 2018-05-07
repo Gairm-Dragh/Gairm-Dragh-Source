@@ -11,6 +11,7 @@ public class combatGlobals : MonoBehaviour {
     public List<player> team2 = new List<player>();
 
     private void Start() {
+        Debug.Log("Initing stuff");
         DragonGlobals.initTypes();
         DragonGlobals.initMoves();
     }
