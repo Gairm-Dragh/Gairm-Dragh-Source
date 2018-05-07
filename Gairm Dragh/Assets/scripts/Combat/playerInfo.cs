@@ -171,20 +171,26 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
     // Use this for initialization
     void Start() {
-        randomTeam();
+        Debug.Log(host);
         Debug.Log(globals.players);
 
         processing = GameObject.Find("background");
 
-        //add the player to the lists
-        processing.GetComponent<combatGlobals>().players.Add(player);
+        if (processing.GetComponent<playerInfo>().host) {
+            randomTeam();
 
-        if (player.team == 1) {
-            processing.GetComponent<combatGlobals>().team1.Add(player);
+            //add the player to the lists
+            processing.GetComponent<combatGlobals>().players.Add(player);
+
+            if (player.team == 1) {
+                processing.GetComponent<combatGlobals>().team1.Add(player);
+            }
+            else {
+                processing.GetComponent<combatGlobals>().team2.Add(player);
+            }
         }
-        else {
-            processing.GetComponent<combatGlobals>().team2.Add(player);
-        }
+
+        
     }
 
     // Update is called once per frame
