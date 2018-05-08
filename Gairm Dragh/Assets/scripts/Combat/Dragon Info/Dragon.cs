@@ -9,6 +9,7 @@ public class Dragon { //The Dragon Class is used for keeping track of the stats 
     int[] EVs = new int[6]; //the EVs of the dragon
     int[] IVs = new int[6]; //the IVs of the dragon
     public string age; //the age of the dragon
+    public move[] moves = new move[5];
 
     void calcStats() {
         this.maxHP = ((2 * type.HP + IVs[0] + (EVs[0] / 4)) * level / 100) + level + 10;
@@ -20,7 +21,7 @@ public class Dragon { //The Dragon Class is used for keeping track of the stats 
     }
 
     //Dragon intializer
-    public Dragon(Type ty, int lvl, int[] EV, int[] IV, string name) {
+    public Dragon(Type ty, int lvl, int[] EV, int[] IV, string name, move[] move) {
         type = ty;
         level = lvl;
         EVs = EV;
@@ -28,6 +29,7 @@ public class Dragon { //The Dragon Class is used for keeping track of the stats 
         calcStats();
         currentHP = maxHP;
         nickname = name;
+        moves = move;
     }
 
 }

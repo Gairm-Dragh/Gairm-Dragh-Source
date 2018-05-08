@@ -10,6 +10,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     public player player; //The palyer itself
     string[] names = new string[100]; //All the random names
     Type[] allTypes = DragonGlobals.types; //Al the types
+    move[] allMoves = DragonGlobals.moves;
     public GameObject processing;
     public bool host = false; //whether or not the player is host
     public GameObject test;
@@ -165,7 +166,17 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             }
         }
 
-        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam);
+        //moves are selected randomly
+        move[][] randomMoves = new move[4][];
+        for (int i = 0; i < randomMoves.Length; i++) {
+            randomMoves[i] = new move[5];
+
+            for (int j = 0; j < randomMoves[i].Length; j++) {
+                randomMoves[i][j] = allMoves[Random.Range(0, allMoves.Length - 1)];
+            }
+        }
+
+        player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam, randomMoves);
         Debug.Log("Player " + playerName + "initialized");
     }
 

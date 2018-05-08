@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 78005949f49c4c745bffa8771482c4fc
+timeCreated: 1525818089
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - dragon: {instanceID: 0}
+  - AngelicF: {fileID: 21300000, guid: 42fdc03af224e57498583db6ef43dff5, type: 3}
+  - AngelicB: {fileID: 21300000, guid: 057c39ca1f83b734ca66bbf961d559d6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
