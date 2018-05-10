@@ -173,7 +173,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         }
 
         player = new player(playerName, randomTypes, levels, randomIVs, EVs, randomNames, playerTeam, randomMoves);
-        Debug.Log("Player " + playerName + "initialized");
+        //Debug.Log("Player " + playerName + " initialized");
     }
 
     // Use this for initialization

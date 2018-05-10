@@ -20,9 +20,9 @@ namespace Prototype.NetworkLobby {
                 gamePlayer.GetComponent<playerInfo>().playerTeam = 2;
             }
 
-            Debug.Log("Hooked" + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
+            //Debug.Log("Hooked " + lobbyPlayer.GetComponent<LobbyPlayer>().playerName);
             gamePlayer.GetComponent<playerInfo>().host = true;
-            Debug.Log(gamePlayer.GetComponent<playerInfo>().host);
+            //Debug.Log(gamePlayer.GetComponent<playerInfo>().host);
         }
     }
 

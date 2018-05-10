@@ -14,7 +14,7 @@ public class combatGlobals : MonoBehaviour {
     public bool host = false;
 
     private void Start() {
-        Debug.Log("Initing stuff");
+        //Debug.Log("Initing stuff");
         DragonGlobals.initTypes();
         DragonGlobals.initMoves();
     }
