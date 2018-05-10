@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class hosting : MonoBehaviour {
+public class hosting : NetworkBehaviour {
 
     public bool host = false; //Whether or not the player is host
     public bool ready = false; //Whether or not everyone is loaded in
