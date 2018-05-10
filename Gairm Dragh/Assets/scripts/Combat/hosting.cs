@@ -146,7 +146,7 @@ public class hosting : NetworkBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        Debug.Log(globals.name);
     }
 
     // Update is called once per frame

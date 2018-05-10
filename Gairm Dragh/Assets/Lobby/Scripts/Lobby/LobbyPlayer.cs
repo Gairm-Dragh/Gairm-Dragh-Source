@@ -116,9 +116,11 @@ namespace Prototype.NetworkLobby
             readyButton.interactable = true;
 
             //have to use child count of player prefab already setup as "this.slot" is not set yet
-            if (playerName == "")
-                CmdNameChanged("Player" + (LobbyPlayerList._instance.playerListContentTransform.childCount-1));
-
+            if (playerName == "") {
+                CmdNameChanged("Player" + (LobbyPlayerList._instance.playerListContentTransform.childCount - 1));
+                globals.name = playerName;
+            }
+            
             //we switch from simple name display to name input
             colorButton.interactable = true;
             nameInput.interactable = true;
@@ -187,6 +189,7 @@ namespace Prototype.NetworkLobby
         {
             playerName = newName;
             nameInput.text = playerName;
+            globals.name = playerName;
         }
 
         public void OnMyColor(Color newColor)
@@ -262,6 +265,7 @@ namespace Prototype.NetworkLobby
         public void CmdNameChanged(string name)
         {
             playerName = name;
+            globals.name = playerName;
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
