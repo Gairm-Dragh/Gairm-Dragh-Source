@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 
 public class playerInfo : NetworkBehaviour { //This class holds the information of a player
 
+    [SyncVar]
     public string playerName; //The name of the player
+
     public int playerTeam; //The team of the palyer
     public player player; //The palyer itself
     string[] names = new string[100]; //All the random names
