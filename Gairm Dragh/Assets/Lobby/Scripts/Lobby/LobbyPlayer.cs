@@ -265,7 +265,6 @@ namespace Prototype.NetworkLobby
         public void CmdNameChanged(string name)
         {
             playerName = name;
-            globals.name = playerName;
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
