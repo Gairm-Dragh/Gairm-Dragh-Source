@@ -118,7 +118,6 @@ namespace Prototype.NetworkLobby
             //have to use child count of player prefab already setup as "this.slot" is not set yet
             if (playerName == "") {
                 CmdNameChanged("Player" + (LobbyPlayerList._instance.playerListContentTransform.childCount - 1));
-                globals.name = playerName;
             }
             
             //we switch from simple name display to name input
@@ -265,6 +264,7 @@ namespace Prototype.NetworkLobby
         public void CmdNameChanged(string name)
         {
             playerName = name;
+            globals.name = playerName;
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
