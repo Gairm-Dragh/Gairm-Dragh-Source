@@ -12,7 +12,15 @@ public class dragonControl : NetworkBehaviour {
     [SyncVar]
     public string type; //The type of the dragon
 
+    [SyncVar]
+    public string name;
+
     public Sprite AirB, AirF, AngelicB, AngelicF, BalanceB, BalanceF, DemonicB, DemonicF, EarthB, EarthF, FireB, FireF, GrassB, GrassF, ToxicB, ToxicF, WaterB, WaterF; //The sprites for the dragons
+
+    public void changeDragon(Dragon newDragon) {
+        type = newDragon.type.name;
+        name = newDragon.nickname;
+    }
 
     //changes the sprite to the correct type
     public void changeSprite() {

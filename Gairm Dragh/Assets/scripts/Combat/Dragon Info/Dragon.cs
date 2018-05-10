@@ -9,7 +9,8 @@ public class Dragon { //The Dragon Class is used for keeping track of the stats 
     int[] EVs = new int[6]; //the EVs of the dragon
     int[] IVs = new int[6]; //the IVs of the dragon
     public string age; //the age of the dragon
-    public move[] moves = new move[5];
+    public move[] moves = new move[5]; //The dragon's moves
+    public bool inUse = false; //Whether or not the dragon is in use
 
     void calcStats() {
         this.maxHP = ((2 * type.HP + IVs[0] + (EVs[0] / 4)) * level / 100) + level + 10;
