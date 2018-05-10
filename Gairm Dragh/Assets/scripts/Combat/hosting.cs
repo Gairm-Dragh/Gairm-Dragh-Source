@@ -45,28 +45,28 @@ public class hosting : MonoBehaviour {
 
         //distribute team 2's slots
         if (team2Size == 1) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[0].name;
-            UI3.GetComponent<UIControl>().owner = team1[0].name;
-            UI4.GetComponent<UIControl>().owner = team1[0].name;
+            UI1.GetComponent<UIControl>().owner = team2[0].name;
+            UI2.GetComponent<UIControl>().owner = team2[0].name;
+            UI3.GetComponent<UIControl>().owner = team2[0].name;
+            UI4.GetComponent<UIControl>().owner = team2[0].name;
         }
         else if (team2Size == 2) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[0].name;
-            UI3.GetComponent<UIControl>().owner = team1[1].name;
-            UI4.GetComponent<UIControl>().owner = team1[1].name;
+            UI1.GetComponent<UIControl>().owner = team2[0].name;
+            UI2.GetComponent<UIControl>().owner = team2[0].name;
+            UI3.GetComponent<UIControl>().owner = team2[1].name;
+            UI4.GetComponent<UIControl>().owner = team2[1].name;
         }
         else if (team2Size == 3) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[1].name;
-            UI3.GetComponent<UIControl>().owner = team1[1].name;
-            UI4.GetComponent<UIControl>().owner = team1[2].name;
+            UI1.GetComponent<UIControl>().owner = team2[0].name;
+            UI2.GetComponent<UIControl>().owner = team2[1].name;
+            UI3.GetComponent<UIControl>().owner = team2[1].name;
+            UI4.GetComponent<UIControl>().owner = team2[2].name;
         }
         else if (team2Size == 4) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[1].name;
-            UI3.GetComponent<UIControl>().owner = team1[2].name;
-            UI4.GetComponent<UIControl>().owner = team1[3].name;
+            UI1.GetComponent<UIControl>().owner = team2[0].name;
+            UI2.GetComponent<UIControl>().owner = team2[1].name;
+            UI3.GetComponent<UIControl>().owner = team2[2].name;
+            UI4.GetComponent<UIControl>().owner = team2[3].name;
         }
     }
 
