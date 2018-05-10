@@ -84,13 +84,13 @@ public class hosting : NetworkBehaviour {
         //distribute team 2's slots
         if (team2Size == 1) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon1.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
+            dragon5.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
             UI6.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon2.GetComponent<dragonControl>().changeDragon(team2[0].dragon2);
+            dragon6.GetComponent<dragonControl>().changeDragon(team2[0].dragon2);
             UI7.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon3.GetComponent<dragonControl>().changeDragon(team2[0].dragon3);
+            dragon7.GetComponent<dragonControl>().changeDragon(team2[0].dragon3);
             UI8.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon4.GetComponent<dragonControl>().changeDragon(team2[0].dragon4);
+            dragon8.GetComponent<dragonControl>().changeDragon(team2[0].dragon4);
 
             team2[0].dragon1.inUse = true;
             team2[0].dragon2.inUse = true;
@@ -99,13 +99,13 @@ public class hosting : NetworkBehaviour {
         }
         else if (team2Size == 2) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon1.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
+            dragon5.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
             UI6.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon2.GetComponent<dragonControl>().changeDragon(team2[0].dragon2);
+            dragon6.GetComponent<dragonControl>().changeDragon(team2[0].dragon2);
             UI7.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
-            dragon3.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
+            dragon7.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
             UI8.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
-            dragon4.GetComponent<dragonControl>().changeDragon(team2[1].dragon2);
+            dragon8.GetComponent<dragonControl>().changeDragon(team2[1].dragon2);
 
             team2[0].dragon1.inUse = true;
             team2[0].dragon2.inUse = true;
@@ -114,13 +114,13 @@ public class hosting : NetworkBehaviour {
         }
         else if (team2Size == 3) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon1.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
+            dragon5.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
             UI6.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
-            dragon2.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
+            dragon6.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
             UI7.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
-            dragon3.GetComponent<dragonControl>().changeDragon(team2[1].dragon2);
+            dragon7.GetComponent<dragonControl>().changeDragon(team2[1].dragon2);
             UI8.GetComponent<UIControl>().OnOwnerChange(team2[2].name);
-            dragon4.GetComponent<dragonControl>().changeDragon(team2[2].dragon1);
+            dragon8.GetComponent<dragonControl>().changeDragon(team2[2].dragon1);
 
             team2[0].dragon1.inUse = true;
             team2[1].dragon1.inUse = true;
@@ -129,13 +129,13 @@ public class hosting : NetworkBehaviour {
         }
         else if (team2Size == 4) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
-            dragon1.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
+            dragon5.GetComponent<dragonControl>().changeDragon(team2[0].dragon1);
             UI6.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
-            dragon2.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
+            dragon6.GetComponent<dragonControl>().changeDragon(team2[1].dragon1);
             UI7.GetComponent<UIControl>().OnOwnerChange(team2[2].name);
-            dragon3.GetComponent<dragonControl>().changeDragon(team2[2].dragon1);
+            dragon7.GetComponent<dragonControl>().changeDragon(team2[2].dragon1);
             UI8.GetComponent<UIControl>().OnOwnerChange(team2[3].name);
-            dragon4.GetComponent<dragonControl>().changeDragon(team2[3].dragon1);
+            dragon8.GetComponent<dragonControl>().changeDragon(team2[3].dragon1);
 
             team2[0].dragon1.inUse = true;
             team2[1].dragon1.inUse = true;
