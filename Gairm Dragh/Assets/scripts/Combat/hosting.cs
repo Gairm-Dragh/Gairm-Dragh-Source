@@ -77,12 +77,14 @@ public class hosting : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (globals.players == globals.loaded) {
-            ready = true;
-        }
+        if (host) {
+            if (globals.players == globals.loaded) {
+                ready = true;
+            }
 
-        if (ready) {
-            labelUI();
+            if (ready) {
+                labelUI();
+            }
         }
     }
 }

@@ -186,6 +186,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         if (host) {
             randomTeam();
             processing.GetComponent<combatGlobals>().host = true;
+            processing.GetComponent<hosting>().host = true;
 
             //add the player to the lists
             processing.GetComponent<combatGlobals>().players.Add(player);
