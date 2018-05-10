@@ -20,54 +20,54 @@ public class hosting : NetworkBehaviour {
 
         //distribute team 1's slots
         if (team1Size == 1) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[0].name;
-            UI3.GetComponent<UIControl>().owner = team1[0].name;
-            UI4.GetComponent<UIControl>().owner = team1[0].name;
+            UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI2.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI3.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI4.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
         }
         else if (team1Size == 2) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[0].name;
-            UI3.GetComponent<UIControl>().owner = team1[1].name;
-            UI4.GetComponent<UIControl>().owner = team1[1].name;
+            UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI2.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI3.GetComponent<UIControl>().OnOwnerChange(team1[1].name);
+            UI4.GetComponent<UIControl>().OnOwnerChange(team1[1].name);
         }
         else if (team1Size == 3) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[1].name;
-            UI3.GetComponent<UIControl>().owner = team1[1].name;
-            UI4.GetComponent<UIControl>().owner = team1[2].name;
+            UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI2.GetComponent<UIControl>().OnOwnerChange(team1[1].name);
+            UI3.GetComponent<UIControl>().OnOwnerChange(team1[1].name);
+            UI4.GetComponent<UIControl>().OnOwnerChange(team1[2].name);
         }
         else if (team1Size == 4) {
-            UI1.GetComponent<UIControl>().owner = team1[0].name;
-            UI2.GetComponent<UIControl>().owner = team1[1].name;
-            UI3.GetComponent<UIControl>().owner = team1[2].name;
-            UI4.GetComponent<UIControl>().owner = team1[3].name;
+            UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
+            UI2.GetComponent<UIControl>().OnOwnerChange(team1[1].name);
+            UI3.GetComponent<UIControl>().OnOwnerChange(team1[2].name);
+            UI4.GetComponent<UIControl>().OnOwnerChange(team1[3].name);
         }
 
         //distribute team 2's slots
-        if (team2Size == 1) {
-            UI5.GetComponent<UIControl>().owner = team2[0].name;
-            UI6.GetComponent<UIControl>().owner = team2[0].name;
-            UI7.GetComponent<UIControl>().owner = team2[0].name;
-            UI8.GetComponent<UIControl>().owner = team2[0].name;
+        if (team1Size == 1) {
+            UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI6.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI7.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI8.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
         }
-        else if (team2Size == 2) {
-            UI5.GetComponent<UIControl>().owner = team2[0].name;
-            UI6.GetComponent<UIControl>().owner = team2[0].name;
-            UI7.GetComponent<UIControl>().owner = team2[1].name;
-            UI8.GetComponent<UIControl>().owner = team2[1].name;
+        else if (team1Size == 2) {
+            UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI6.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI7.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
+            UI8.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
         }
-        else if (team2Size == 3) {
-            UI5.GetComponent<UIControl>().owner = team2[0].name;
-            UI6.GetComponent<UIControl>().owner = team2[1].name;
-            UI7.GetComponent<UIControl>().owner = team2[1].name;
-            UI8.GetComponent<UIControl>().owner = team2[2].name;
+        else if (team1Size == 3) {
+            UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI6.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
+            UI7.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
+            UI8.GetComponent<UIControl>().OnOwnerChange(team2[2].name);
         }
-        else if (team2Size == 4) {
-            UI5.GetComponent<UIControl>().owner = team2[0].name;
-            UI6.GetComponent<UIControl>().owner = team2[1].name;
-            UI7.GetComponent<UIControl>().owner = team2[2].name;
-            UI8.GetComponent<UIControl>().owner = team2[3].name;
+        else if (team1Size == 4) {
+            UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
+            UI6.GetComponent<UIControl>().OnOwnerChange(team2[1].name);
+            UI7.GetComponent<UIControl>().OnOwnerChange(team2[2].name);
+            UI8.GetComponent<UIControl>().OnOwnerChange(team2[3].name);
         }
     }
 

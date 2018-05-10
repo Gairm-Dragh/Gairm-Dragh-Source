@@ -5,8 +5,12 @@ using UnityEngine.Networking;
 
 public class UIControl : NetworkBehaviour {
 
-    [SyncVar]
+    [SyncVar(hook = "OnOwnerChange")]
     public string owner; //The person who controls this UI
+
+    public void OnOwnerChange(string newOwner) {
+        owner = newOwner;
+    }
 
     // Use this for initialization
     void Start() {
@@ -15,6 +19,6 @@ public class UIControl : NetworkBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        
     }
 }
