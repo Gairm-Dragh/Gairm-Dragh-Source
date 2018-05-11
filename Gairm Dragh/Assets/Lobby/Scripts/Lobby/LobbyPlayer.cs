@@ -188,8 +188,6 @@ namespace Prototype.NetworkLobby
         {
             playerName = newName;
             nameInput.text = playerName;
-            globals.name = playerName;
-            Debug.Log(globals.name);
         }
 
         public void OnMyColor(Color newColor)
