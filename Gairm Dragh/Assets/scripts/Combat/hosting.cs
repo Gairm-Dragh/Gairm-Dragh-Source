@@ -16,7 +16,7 @@ public class hosting : NetworkBehaviour {
     GameObject[] dragons = new GameObject[8];
     GameObject[] xs = new GameObject[8];
 
-    [SyncVar]
+    [SyncVar(hook = "OnLabeledChanged")]
     public bool labeled = false; //Whether or not stuff is labeled
 
     //Labels the UI with the proper owner
@@ -151,6 +151,10 @@ public class hosting : NetworkBehaviour {
         }
     }
 
+    public void OnLabeledChanged(bool newLabel) {
+        labeled = newLabel;
+    }
+
     // Use this for initialization
     void Start() {
         Debug.Log(globals.name);
@@ -192,7 +196,7 @@ public class hosting : NetworkBehaviour {
 
             if (ready) {
                 labelUI();
-                labeled = true;
+                OnLabeledChanged(true);
             }
         }
 
