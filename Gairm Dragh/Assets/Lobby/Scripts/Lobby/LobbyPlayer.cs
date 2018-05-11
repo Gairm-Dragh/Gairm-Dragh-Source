@@ -189,6 +189,7 @@ namespace Prototype.NetworkLobby
             playerName = newName;
             nameInput.text = playerName;
             globals.name = playerName;
+            Debug.Log(globals.name);
         }
 
         public void OnMyColor(Color newColor)
@@ -264,7 +265,6 @@ namespace Prototype.NetworkLobby
         public void CmdNameChanged(string name)
         {
             playerName = name;
-            globals.name = playerName;
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
