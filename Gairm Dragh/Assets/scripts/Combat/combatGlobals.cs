@@ -5,6 +5,7 @@ using UnityEngine;
 public class combatGlobals : MonoBehaviour {
     //all the players
     public List<player> players = new List<player>();
+    public List<string> playerNames = new List<string>();
 
     //the teams
     public List<player> team1 = new List<player>();
