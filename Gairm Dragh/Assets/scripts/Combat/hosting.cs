@@ -203,7 +203,6 @@ public class hosting : NetworkBehaviour {
         //distributes the labels
         if (labeled) {
             for (int i = 0; i < UIs.Length; i++) {
-                //Debug.Log(UIs[i].GetComponent<UIControl>().owner + " " + i.ToString());
                 if (UIs[i].GetComponent<UIControl>().owner == globals.name) {
                     UIs[i].SetActive(true);
                 } else {

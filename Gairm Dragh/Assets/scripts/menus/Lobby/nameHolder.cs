@@ -22,12 +22,8 @@ public class nameHolder : MonoBehaviour {
             //Debug.Log("Equals");
             for (int i = 0; i < playerList.transform.childCount - 1; i++) {
                 if (playerList.transform.GetChild(i).GetChild(6).gameObject.activeInHierarchy) {
-                    Debug.Log("Found the player");
                     player = playerList.transform.GetChild(i).gameObject;
                     break;
-                }
-                else {
-                    Debug.Log("Still Looking");
                 }
             }
         }

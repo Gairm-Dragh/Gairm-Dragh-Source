@@ -19,12 +19,11 @@ public class dragonControl : NetworkBehaviour {
 
     public void changeDragon(Dragon newDragon) {
         type = newDragon.type.name;
-        name = newDragon.nickname;
+        dragonName = newDragon.nickname;
     }
 
     //changes the sprite to the correct type
     public void changeSprite() {
-        //Debug.Log("Changing sprite");
         if (type == "Air" && team == 1) {
             dragon.GetComponent<SpriteRenderer>().sprite = AirB;
             
