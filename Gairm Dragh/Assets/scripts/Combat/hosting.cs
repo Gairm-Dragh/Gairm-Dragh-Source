@@ -9,8 +9,15 @@ public class hosting : NetworkBehaviour {
     public bool ready = false; //Whether or not everyone is loaded in
     public bool setup = false; //Whether or not we have everything set up
     public GameObject UI1, UI2, UI3, UI4, UI5, UI6, UI7, UI8; //The UIs for interaction
-    public GameObject dragon1, dragon2, dragon3, dragon4, dragon5, dragon6, dragon7, dragon8;
+    public GameObject dragon1, dragon2, dragon3, dragon4, dragon5, dragon6, dragon7, dragon8; //The dragon sprites
+    public GameObject x1, x2, x3, x4, x5, x6, x7, x8; //The xs
     public GameObject processing; //The background processing stuff
+    GameObject[] UIs = new GameObject[8];
+    GameObject[] dragons = new GameObject[8];
+    GameObject[] xs = new GameObject[8];
+
+    [SyncVar]
+    public bool labeled = false; //Whether or not stuff is labeled
 
     //Labels the UI with the proper owner
     public void labelUI() {
@@ -147,6 +154,33 @@ public class hosting : NetworkBehaviour {
     // Use this for initialization
     void Start() {
         Debug.Log(globals.name);
+        
+        UIs[0] = UI1;
+        UIs[1] = UI2;
+        UIs[2] = UI3;
+        UIs[3] = UI4;
+        UIs[4] = UI5;
+        UIs[5] = UI6;
+        UIs[6] = UI7;
+        UIs[7] = UI8;
+
+        dragons[0] = dragon1;
+        dragons[1] = dragon2;
+        dragons[2] = dragon3;
+        dragons[3] = dragon4;
+        dragons[4] = dragon5;
+        dragons[5] = dragon6;
+        dragons[6] = dragon7;
+        dragons[7] = dragon8;
+        
+        xs[0] = x1;
+        xs[1] = x2;
+        xs[2] = x3;
+        xs[3] = x4;
+        xs[4] = x5;
+        xs[5] = x6;
+        xs[6] = x7;
+        xs[7] = x8;
     }
 
     // Update is called once per frame
@@ -158,6 +192,20 @@ public class hosting : NetworkBehaviour {
 
             if (ready) {
                 labelUI();
+                labeled = true;
+            }
+        }
+
+        //distributes the labels
+        if (labeled) {
+            for (int i = 0; i < UIs.Length; i++) {
+                Debug.Log(UIs[i].GetComponent<UIControl>().owner + " " + i.ToString());
+                if (UIs[i].GetComponent<UIControl>().owner == globals.name) {
+                    UIs[i].SetActive(true);
+                } else {
+                    UIs[i].SetActive(false);
+                    xs[i].SetActive(true);
+                }
             }
         }
     }

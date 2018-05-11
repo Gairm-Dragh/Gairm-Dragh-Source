@@ -13,7 +13,7 @@ public class dragonControl : NetworkBehaviour {
     public string type; //The type of the dragon
 
     [SyncVar]
-    public string name;
+    public string dragonName;
 
     public Sprite AirB, AirF, AngelicB, AngelicF, BalanceB, BalanceF, DemonicB, DemonicF, EarthB, EarthF, FireB, FireF, GrassB, GrassF, ToxicB, ToxicF, WaterB, WaterF; //The sprites for the dragons
 
