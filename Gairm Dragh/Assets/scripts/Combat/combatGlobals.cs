@@ -10,6 +10,9 @@ public class combatGlobals : MonoBehaviour {
     public List<player> team1 = new List<player>();
     public List<player> team2 = new List<player>();
 
+    //the slots
+    public GameObject[] slots = new GameObject[8];
+
     //whether or not you are host
     public bool host = false;
 
