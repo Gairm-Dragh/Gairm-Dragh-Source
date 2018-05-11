@@ -12,6 +12,9 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     move[] allMoves = DragonGlobals.moves;
     public GameObject processing;
     public bool host = false; //whether or not the player is host
+    public bool doneLoaded = false; //Whether or not we've run through the update loop and succeeded
+    public bool found = false; //Whether or not things are found
+    GameObject blank; //Leave this blank
 
     //creates a random team of dragons to initialize into a player
     public void randomTeam() {
@@ -180,29 +183,42 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
         //Debug.Log(host);
         //Debug.Log(globals.players);
 
-        processing = GameObject.Find("background");
+        
 
         if (host) {
-            randomTeam();
-            processing.GetComponent<combatGlobals>().host = true;
-            processing.GetComponent<hosting>().host = true;
-
-            //add the player to the lists
-            processing.GetComponent<combatGlobals>().players.Add(player);
-
-            if (player.team == 1) {
-                processing.GetComponent<combatGlobals>().team1.Add(player);
-            }
-            else {
-                processing.GetComponent<combatGlobals>().team2.Add(player);
-            }
-
-            globals.loaded++;
+            
         }
     }
 
     // Update is called once per frame
     void Update() {
+        if (host) {
+            if (!found) {
+                processing = GameObject.Find("background");
+                if (processing != blank) {
+                    found = true;
+                }
+
+            } else if (!doneLoaded) {
+                randomTeam();
+                processing.GetComponent<combatGlobals>().host = true;
+                processing.GetComponent<hosting>().host = true;
+
+                //add the player to the lists
+                processing.GetComponent<combatGlobals>().players.Add(player);
+
+                if (player.team == 1) {
+                    processing.GetComponent<combatGlobals>().team1.Add(player);
+                }
+                else {
+                    processing.GetComponent<combatGlobals>().team2.Add(player);
+                }
+
+                globals.loaded++;
+                doneLoaded = true;
+            }
+            
+        }
 
     }
 }
