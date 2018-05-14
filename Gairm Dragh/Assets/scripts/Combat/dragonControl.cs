@@ -16,6 +16,7 @@ public class dragonControl : NetworkBehaviour {
     public string dragonName;
 
     public Sprite AirB, AirF, AngelicB, AngelicF, BalanceB, BalanceF, DemonicB, DemonicF, EarthB, EarthF, FireB, FireF, GrassB, GrassF, ToxicB, ToxicF, WaterB, WaterF; //The sprites for the dragons
+    public GameObject UI; //The UI this dragon goes to
 
     public void changeDragon(Dragon newDragon) {
         type = newDragon.type.name;
@@ -87,6 +88,8 @@ public class dragonControl : NetworkBehaviour {
         else if (type == "Water" && team == 2) {
             dragon.GetComponent<SpriteRenderer>().sprite = WaterF;
         }
+
+        UI.GetComponent<UIControl>().changeName(dragonName);
     }
 
     // Use this for initialization
