@@ -8,21 +8,27 @@ public class hosting : NetworkBehaviour {
     public bool host = false; //Whether or not the player is host
     public bool ready = false; //Whether or not everyone is loaded in
     public bool setup = false; //Whether or not we have everything set up
+    public bool commands = false; //Whether or not al commands have been input
     public GameObject UI1, UI2, UI3, UI4, UI5, UI6, UI7, UI8; //The UIs for interaction
     public GameObject dragon1, dragon2, dragon3, dragon4, dragon5, dragon6, dragon7, dragon8; //The dragon sprites
     public GameObject x1, x2, x3, x4, x5, x6, x7, x8; //The xs
+    public GameObject health1, health2, health3, health4, health5, health6, health7, health8; //The health bars
     public GameObject processing; //The background processing stuff
     GameObject[] UIs = new GameObject[8];
     GameObject[] dragons = new GameObject[8];
     GameObject[] xs = new GameObject[8];
+    GameObject[] healths = new GameObject[8];
+    List<player> team1;
+    List<player> team2;
 
     [SyncVar(hook = "OnLabeledChanged")]
     public bool labeled = false; //Whether or not stuff is labeled
 
     //Labels the UI with the proper owner
     public void labelUI() {
-        List<player> team1 = processing.GetComponent<combatGlobals>().team1;
-        List<player> team2 = processing.GetComponent<combatGlobals>().team2;
+        team1 = processing.GetComponent<combatGlobals>().team1;
+        team2 = processing.GetComponent<combatGlobals>().team2;
+
         int team1Size = team1.Count;
         int team2Size = team2.Count;
 
@@ -157,8 +163,8 @@ public class hosting : NetworkBehaviour {
 
     // Use this for initialization
     void Start() {
-        Debug.Log(globals.name);
-        
+        //Debug.Log(globals.name);
+
         UIs[0] = UI1;
         UIs[1] = UI2;
         UIs[2] = UI3;
@@ -176,7 +182,7 @@ public class hosting : NetworkBehaviour {
         dragons[5] = dragon6;
         dragons[6] = dragon7;
         dragons[7] = dragon8;
-        
+
         xs[0] = x1;
         xs[1] = x2;
         xs[2] = x3;
@@ -185,6 +191,15 @@ public class hosting : NetworkBehaviour {
         xs[5] = x6;
         xs[6] = x7;
         xs[7] = x8;
+
+        healths[0] = health1;
+        healths[1] = health2;
+        healths[2] = health3;
+        healths[3] = health4;
+        healths[4] = health5;
+        healths[5] = health6;
+        healths[6] = health7;
+        healths[7] = health8;
     }
 
     // Update is called once per frame
@@ -205,11 +220,15 @@ public class hosting : NetworkBehaviour {
             for (int i = 0; i < UIs.Length; i++) {
                 if (UIs[i].GetComponent<UIControl>().owner == globals.name) {
                     UIs[i].SetActive(true);
-                } else {
+                }
+                else {
                     UIs[i].SetActive(false);
                     xs[i].SetActive(true);
                 }
             }
+
+            setup = true;
+            labeled = false;
         }
     }
 }

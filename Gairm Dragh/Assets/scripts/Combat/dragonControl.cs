@@ -15,8 +15,12 @@ public class dragonControl : NetworkBehaviour {
     [SyncVar]
     public string dragonName;
 
+    [SyncVar]
+    public string command; //The command that thi slsot has in format "Switch?,Move/TargetDragon,TargetSlot"
+
     public Sprite AirB, AirF, AngelicB, AngelicF, BalanceB, BalanceF, DemonicB, DemonicF, EarthB, EarthF, FireB, FireF, GrassB, GrassF, ToxicB, ToxicF, WaterB, WaterF; //The sprites for the dragons
     public GameObject UI; //The UI this dragon goes to
+    public int num; //The number of this slot
 
     public void changeDragon(Dragon newDragon) {
         type = newDragon.type.name;

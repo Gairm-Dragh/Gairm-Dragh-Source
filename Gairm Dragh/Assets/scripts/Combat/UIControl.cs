@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class UIControl : NetworkBehaviour {
-    public GameObject name; //Thetext that holds the dragon name
+    public GameObject dragonName; //The text that holds the dragon name
 
     [SyncVar(hook = "OnOwnerChange")]
     public string owner; //The person who controls this UI
@@ -15,7 +15,7 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void changeName(string newName) {
-        name.GetComponent<Text>().text = newName;
+        dragonName.GetComponent<Text>().text = newName;
     }
 
     // Use this for initialization
