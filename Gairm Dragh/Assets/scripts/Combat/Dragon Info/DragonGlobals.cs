@@ -24,6 +24,64 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
         Grass = new Type(91, 90, 106, 130, 106, 77, 7, "Grass");
         Toxic = new Type(120, 70, 120, 75, 130, 85, 8, "Toxic");
 
+        //Giving each type its weaknesses and resistances
+        Fire.resistances.Add(Fire);
+        Fire.resistances.Add(Air);
+        Fire.resistances.Add(Angelic);
+        Fire.resistances.Add(Grass);
+        Fire.weaknesses.Add(Water);
+        Fire.weaknesses.Add(Earth);
+        Fire.weaknesses.Add(Balance);
+        Water.resistances.Add(Fire);
+        Water.resistances.Add(Water);
+        Water.resistances.Add(Earth);
+        Water.resistances.Add(Demonic);
+        Water.weaknesses.Add(Balance);
+        Water.weaknesses.Add(Toxic);
+        Water.weaknesses.Add(Grass);
+        Earth.resistances.Add(Fire);
+        Earth.resistances.Add(Earth);
+        Earth.weaknesses.Add(Water);
+        Earth.weaknesses.Add(Air);
+        Earth.weaknesses.Add(Balance);
+        Earth.weaknesses.Add(Angelic);
+        Earth.weaknesses.Add(Grass);
+        Earth.weaknesses.Add(Toxic);
+        Air.resistances.Add(Earth);
+        Air.resistances.Add(Air);
+        Air.resistances.Add(Demonic);
+        Air.resistances.Add(Grass);
+        Air.weaknesses.Add(Fire);
+        Air.weaknesses.Add(Balance);
+        Balance.resistances.Add(Balance);
+        Balance.weaknesses.Add(Fire);
+        Balance.weaknesses.Add(Water);
+        Balance.weaknesses.Add(Earth);
+        Balance.weaknesses.Add(Air);
+        Balance.weaknesses.Add(Angelic);
+        Balance.weaknesses.Add(Demonic);
+        Angelic.resistances.Add(Water);
+        Angelic.resistances.Add(Earth);
+        Angelic.resistances.Add(Angelic);
+        Angelic.weaknesses.Add(Fire);
+        Angelic.weaknesses.Add(Balance);
+        Angelic.weaknesses.Add(Demonic);
+        Angelic.weaknesses.Add(Toxic);
+        Demonic.resistances.Add(Toxic);
+        Demonic.weaknesses.Add(Water);
+        Demonic.weaknesses.Add(Air);
+        Demonic.weaknesses.Add(Balance);
+        Demonic.weaknesses.Add(Angelic);
+        Demonic.weaknesses.Add(Demonic);
+        Grass.resistances.Add(Water);
+        Grass.resistances.Add(Grass);
+        Grass.weaknesses.Add(Fire);
+        Grass.weaknesses.Add(Air);
+        Grass.weaknesses.Add(Toxic);
+        Toxic.resistances.Add(Water);
+        Toxic.resistances.Add(Angelic);
+        Toxic.resistances.Add(Grass);
+
         //putting the types into the types array
         types[0] = Fire;
         types[1] = Water;
@@ -34,6 +92,8 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
         types[6] = Balance;
         types[7] = Grass;
         types[8] = Toxic;
+
+        globals.types = types;
     }
 
     static public void initMoves() {
@@ -88,5 +148,7 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
         moves[22] = HydroPump;
         moves[23] = BubbleBeam;
         moves[24] = HydroCannon;
+
+        globals.moves = moves;
     }
 }

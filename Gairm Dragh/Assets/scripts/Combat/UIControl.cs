@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UIControl : NetworkBehaviour {
     public GameObject dragonName; //The text that holds the dragon name
+    public string command = ""; //The command for this slot
 
     [SyncVar(hook = "OnOwnerChange")]
     public string owner; //The person who controls this UI

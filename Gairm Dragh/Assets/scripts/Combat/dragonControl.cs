@@ -102,7 +102,7 @@ public class dragonControl : NetworkBehaviour {
     }
 
     public void changeHealth() {
-        health.transform.localScale = new Vector3(healthPercent, 10, 1);
+        health.transform.localScale = new Vector3(healthPercentLast, 10, 1);
     }
 
     // Use this for initialization
@@ -115,8 +115,9 @@ public class dragonControl : NetworkBehaviour {
         changeSprite();
 
         if (healthPercentLast != healthPercent) {
-            changeHealth();
             healthPercentLast = healthPercent;
+            changeHealth();
+            
         }
     }
 }

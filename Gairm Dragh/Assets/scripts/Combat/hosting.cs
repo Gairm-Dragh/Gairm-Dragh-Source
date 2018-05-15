@@ -8,7 +8,7 @@ public class hosting : NetworkBehaviour {
     public bool host = false; //Whether or not the player is host
     public bool ready = false; //Whether or not everyone is loaded in
     public bool setup = false; //Whether or not we have everything set up
-    public bool commands = false; //Whether or not al commands have been input
+    public bool commands = false; //Whether or not all commands have been input
     public GameObject UI1, UI2, UI3, UI4, UI5, UI6, UI7, UI8; //The UIs for interaction
     public GameObject dragon1, dragon2, dragon3, dragon4, dragon5, dragon6, dragon7, dragon8; //The dragon sprites
     public GameObject x1, x2, x3, x4, x5, x6, x7, x8; //The xs
@@ -160,6 +160,17 @@ public class hosting : NetworkBehaviour {
         labeled = newLabel;
     }
 
+    //checks if all slots have sent a command
+    public bool checkReady() {
+        for (int i = 0; i < UIs.Length; i++) {
+            if (UIs[i].GetComponent<UIControl>().command == "") {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     // Use this for initialization
     void Start() {
         //Debug.Log(globals.name);
@@ -230,6 +241,18 @@ public class hosting : NetworkBehaviour {
 
             setup = true;
             labeled = false;
+        }
+
+        commands = checkReady();
+
+        //processes the commands if all of them are no longer blank
+        if (commands) {
+            //TODO: actually process the commands
+
+            //Blanks all the commands for next time
+            for (int i = 0; i < UIs.Length; i++) {
+                UIs[i].GetComponent<UIControl>().command = "";
+            }
         }
     }
 }
