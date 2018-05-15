@@ -17,7 +17,6 @@ public class hosting : NetworkBehaviour {
     GameObject[] UIs = new GameObject[8];
     GameObject[] dragons = new GameObject[8];
     GameObject[] xs = new GameObject[8];
-    GameObject[] healths = new GameObject[8];
     List<player> team1;
     List<player> team2;
 
@@ -192,6 +191,7 @@ public class hosting : NetworkBehaviour {
         xs[6] = x7;
         xs[7] = x8;
 
+        /*
         healths[0] = health1;
         healths[1] = health2;
         healths[2] = health3;
@@ -200,6 +200,7 @@ public class hosting : NetworkBehaviour {
         healths[5] = health6;
         healths[6] = health7;
         healths[7] = health8;
+        */
     }
 
     // Update is called once per frame

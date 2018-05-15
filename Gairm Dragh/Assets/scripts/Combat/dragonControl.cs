@@ -18,9 +18,14 @@ public class dragonControl : NetworkBehaviour {
     [SyncVar]
     public string command; //The command that thi slsot has in format "Switch?,Move/TargetDragon,TargetSlot"
 
+    [SyncVar]
+    public int healthPercent; //The percent for the health
+
     public Sprite AirB, AirF, AngelicB, AngelicF, BalanceB, BalanceF, DemonicB, DemonicF, EarthB, EarthF, FireB, FireF, GrassB, GrassF, ToxicB, ToxicF, WaterB, WaterF; //The sprites for the dragons
+    public GameObject health; //The health bar
     public GameObject UI; //The UI this dragon goes to
     public int num; //The number of this slot
+    public int healthPercentLast; //The last health percent we changed to
 
     public void changeDragon(Dragon newDragon) {
         type = newDragon.type.name;
@@ -31,7 +36,7 @@ public class dragonControl : NetworkBehaviour {
     public void changeSprite() {
         if (type == "Air" && team == 1) {
             dragon.GetComponent<SpriteRenderer>().sprite = AirB;
-            
+
         }
         else if (type == "Air" && team == 2) {
             dragon.GetComponent<SpriteRenderer>().sprite = AirF;
@@ -96,6 +101,10 @@ public class dragonControl : NetworkBehaviour {
         UI.GetComponent<UIControl>().changeName(dragonName);
     }
 
+    public void changeHealth() {
+        health.transform.localScale = new Vector3(healthPercent, 10, 1);
+    }
+
     // Use this for initialization
     void Start() {
 
@@ -104,5 +113,10 @@ public class dragonControl : NetworkBehaviour {
     // Update is called once per frame
     void Update() {
         changeSprite();
+
+        if (healthPercentLast != healthPercent) {
+            changeHealth();
+            healthPercentLast = healthPercent;
+        }
     }
 }
