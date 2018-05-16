@@ -101,6 +101,7 @@
     <Compile Include="Assets\scripts\Combat\Dragon Info\Type.cs" />
     <Compile Include="Assets\scripts\Combat\UIControl.cs" />
     <Compile Include="Assets\scripts\Combat\combatGlobals.cs" />
+    <Compile Include="Assets\scripts\Combat\command.cs" />
     <Compile Include="Assets\scripts\Combat\dragonControl.cs" />
     <Compile Include="Assets\scripts\Combat\hosting.cs" />
     <Compile Include="Assets\scripts\Combat\move.cs" />
