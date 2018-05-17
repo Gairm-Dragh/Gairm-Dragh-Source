@@ -102,6 +102,17 @@ public class UIControl : NetworkBehaviour {
         //CmdonTempChange(temp);
     }
 
+    public void updateMoves(string moveA, string moveB, string moveC, string moveD, int moveIA, int moveIB, int moveIC, int moveID) {
+        move1.GetComponent<command>().index = moveIA;
+        move2.GetComponent<command>().index = moveIB;
+        move3.GetComponent<command>().index = moveIC;
+        move4.GetComponent<command>().index = moveID;
+        move1.GetComponent<Text>().text = moveA;
+        move2.GetComponent<Text>().text = moveB;
+        move3.GetComponent<Text>().text = moveC;
+        move4.GetComponent<Text>().text = moveD;
+    }
+
     // Use this for initialization
     void Start() {
         commandList[0] = move1;

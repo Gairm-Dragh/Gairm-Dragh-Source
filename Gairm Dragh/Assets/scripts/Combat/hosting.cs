@@ -46,6 +46,11 @@ public class hosting : NetworkBehaviour {
             team1[0].dragon2.inUse = true;
             team1[0].dragon3.inUse = true;
             team1[0].dragon4.inUse = true;
+
+            switchDragons(1, team1[0].dragon1);
+            switchDragons(2, team1[0].dragon2);
+            switchDragons(3, team1[0].dragon3);
+            switchDragons(4, team1[0].dragon4);
         }
         else if (team1Size == 2) {
             UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
@@ -61,6 +66,11 @@ public class hosting : NetworkBehaviour {
             team1[0].dragon2.inUse = true;
             team1[1].dragon1.inUse = true;
             team1[1].dragon2.inUse = true;
+
+            switchDragons(1, team1[0].dragon1);
+            switchDragons(2, team1[0].dragon2);
+            switchDragons(3, team1[1].dragon1);
+            switchDragons(4, team1[1].dragon2);
         }
         else if (team1Size == 3) {
             UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
@@ -76,6 +86,11 @@ public class hosting : NetworkBehaviour {
             team1[1].dragon1.inUse = true;
             team1[1].dragon2.inUse = true;
             team1[2].dragon1.inUse = true;
+
+            switchDragons(1, team1[0].dragon1);
+            switchDragons(2, team1[1].dragon1);
+            switchDragons(3, team1[1].dragon2);
+            switchDragons(4, team1[2].dragon1);
         }
         else if (team1Size == 4) {
             UI1.GetComponent<UIControl>().OnOwnerChange(team1[0].name);
@@ -91,6 +106,11 @@ public class hosting : NetworkBehaviour {
             team1[1].dragon1.inUse = true;
             team1[2].dragon1.inUse = true;
             team1[3].dragon1.inUse = true;
+
+            switchDragons(1, team1[0].dragon1);
+            switchDragons(2, team1[1].dragon1);
+            switchDragons(3, team1[2].dragon1);
+            switchDragons(4, team1[3].dragon1);
         }
 
         //distribute team 2's slots
@@ -108,6 +128,11 @@ public class hosting : NetworkBehaviour {
             team2[0].dragon2.inUse = true;
             team2[0].dragon3.inUse = true;
             team2[0].dragon4.inUse = true;
+
+            switchDragons(5, team2[0].dragon1);
+            switchDragons(6, team2[0].dragon2);
+            switchDragons(7, team2[0].dragon3);
+            switchDragons(8, team2[0].dragon4);
         }
         else if (team2Size == 2) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
@@ -123,6 +148,11 @@ public class hosting : NetworkBehaviour {
             team2[0].dragon2.inUse = true;
             team2[1].dragon1.inUse = true;
             team2[1].dragon2.inUse = true;
+
+            switchDragons(5, team2[0].dragon1);
+            switchDragons(6, team2[0].dragon2);
+            switchDragons(7, team2[1].dragon1);
+            switchDragons(8, team2[1].dragon2);
         }
         else if (team2Size == 3) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
@@ -138,6 +168,11 @@ public class hosting : NetworkBehaviour {
             team2[1].dragon1.inUse = true;
             team2[1].dragon2.inUse = true;
             team2[2].dragon1.inUse = true;
+
+            switchDragons(5, team2[0].dragon1);
+            switchDragons(6, team2[1].dragon1);
+            switchDragons(7, team2[1].dragon2);
+            switchDragons(8, team2[2].dragon1);
         }
         else if (team2Size == 4) {
             UI5.GetComponent<UIControl>().OnOwnerChange(team2[0].name);
@@ -153,11 +188,36 @@ public class hosting : NetworkBehaviour {
             team2[1].dragon1.inUse = true;
             team2[2].dragon1.inUse = true;
             team2[3].dragon1.inUse = true;
+
+            switchDragons(5, team2[0].dragon1);
+            switchDragons(6, team2[1].dragon1);
+            switchDragons(7, team2[2].dragon1);
+            switchDragons(8, team2[3].dragon1);
         }
     }
 
     public void OnLabeledChanged(bool newLabel) {
         labeled = newLabel;
+    }
+
+    public int findMoveIndex(move move) {
+        int index = -1;
+
+        for (int i = 0; i < globals.moves.Length; i++) {
+            if (globals.moves[i] == move) {
+                index = i;
+            }
+            else {
+            }
+        }
+        return index;
+    }
+
+    public void switchDragons(int slot, Dragon newDrag) {
+        dragons[slot - 1].GetComponent<dragonControl>().type = newDrag.type.name;
+        dragons[slot - 1].GetComponent<dragonControl>().name = newDrag.nickname;
+        UIs[slot - 1].GetComponent<UIControl>().updateMoves(newDrag.moves[0].name, newDrag.moves[1].name, newDrag.moves[2].name, newDrag.moves[3].name, findMoveIndex(newDrag.moves[0]), findMoveIndex(newDrag.moves[1]), findMoveIndex(newDrag.moves[2]), findMoveIndex(newDrag.moves[3]));
+        UIs[slot - 1].GetComponent<UIControl>().changeName(newDrag.nickname);
     }
 
     //checks if all slots have sent a command
