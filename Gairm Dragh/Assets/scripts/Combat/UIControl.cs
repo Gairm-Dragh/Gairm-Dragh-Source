@@ -58,7 +58,7 @@ public class UIControl : NetworkBehaviour {
     }
 
     [Command]
-    public void onTempChange(string com) {
+    public void CmdonTempChange(string com) {
         Debug.Log("Running the hook function.");
         command = com;
     }
@@ -85,7 +85,7 @@ public class UIControl : NetworkBehaviour {
         }
 
         Debug.Log("Got temp");
-        onTempChange(temp);
+        CmdonTempChange(temp);
     }
 
     // Use this for initialization
