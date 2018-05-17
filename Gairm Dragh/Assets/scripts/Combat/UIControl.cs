@@ -128,10 +128,10 @@ public class UIControl : NetworkBehaviour {
 
     public void OnNamesChange() {
         Debug.Log(moveName1);
-        move1.GetComponent<Text>().text = moveName1;
-        move2.GetComponent<Text>().text = moveName2;
-        move3.GetComponent<Text>().text = moveName3;
-        move4.GetComponent<Text>().text = moveName4;
+        move1.GetComponentInChildren<Text>().text = moveName1;
+        move2.GetComponentInChildren<Text>().text = moveName2;
+        move3.GetComponentInChildren<Text>().text = moveName3;
+        move4.GetComponentInChildren<Text>().text = moveName4;
     }
 
     public void OnIndeciesChange() {
