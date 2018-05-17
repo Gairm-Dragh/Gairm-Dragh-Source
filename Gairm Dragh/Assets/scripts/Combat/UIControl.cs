@@ -20,9 +20,29 @@ public class UIControl : NetworkBehaviour {
     public int slot; //The number of this slot
     public int team; //The team the dragon is on
 
-    public SyncList<string> moveNames = new SyncListString();
+    [SyncVar]
+    public string moveName1;
 
-    public SyncList<int> moveIndecies = new SyncListInt();
+    [SyncVar]
+    public string moveName2;
+
+    [SyncVar]
+    public string moveName3;
+
+    [SyncVar]
+    public string moveName4;
+
+    [SyncVar]
+    public int moveIndex1;
+
+    [SyncVar]
+    public int moveIndex2;
+
+    [SyncVar]
+    public int moveIndex3;
+
+    [SyncVar]
+    public int moveIndex4;
 
     [SyncVar(hook = "OnOwnerChange")]
     public string owner; //The person who controls this UI
@@ -107,17 +127,18 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void OnNamesChange() {
-        move1.GetComponent<Text>().text = moveNames[0];
-        move2.GetComponent<Text>().text = moveNames[1];
-        move3.GetComponent<Text>().text = moveNames[2];
-        move4.GetComponent<Text>().text = moveNames[3];
+        Debug.Log(moveName1);
+        move1.GetComponent<Text>().text = moveName1;
+        move2.GetComponent<Text>().text = moveName2;
+        move3.GetComponent<Text>().text = moveName3;
+        move4.GetComponent<Text>().text = moveName4;
     }
 
     public void OnIndeciesChange() {
-        move1.GetComponent<command>().index = moveIndecies[0];
-        move2.GetComponent<command>().index = moveIndecies[1];
-        move3.GetComponent<command>().index = moveIndecies[2];
-        move4.GetComponent<command>().index = moveIndecies[3];
+        move1.GetComponent<command>().index = moveIndex1;
+        move2.GetComponent<command>().index = moveIndex2;
+        move3.GetComponent<command>().index = moveIndex3;
+        move4.GetComponent<command>().index = moveIndex4;
     }
 
     // Use this for initialization
@@ -130,16 +151,6 @@ public class UIControl : NetworkBehaviour {
         commandList[5] = switch2;
         commandList[6] = switch3;
         commandList[7] = switch4;
-
-        moveNames.Add("");
-        moveNames.Add("");
-        moveNames.Add("");
-        moveNames.Add("");
-
-        moveIndecies.Add(0);
-        moveIndecies.Add(0);
-        moveIndecies.Add(0);
-        moveIndecies.Add(0);
     }
 
     // Update is called once per frame
