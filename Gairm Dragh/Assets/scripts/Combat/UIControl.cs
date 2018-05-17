@@ -29,7 +29,7 @@ public class UIControl : NetworkBehaviour {
     [SyncVar]
     public string moveName3;
 
-    [SyncVar]
+    [SyncVar(hook = "OnNamesChange")]
     public string moveName4;
 
     [SyncVar]
@@ -41,7 +41,7 @@ public class UIControl : NetworkBehaviour {
     [SyncVar]
     public int moveIndex3;
 
-    [SyncVar]
+    [SyncVar(hook = "OnIndeciesChange")]
     public int moveIndex4;
 
     [SyncVar(hook = "OnOwnerChange")]
@@ -127,7 +127,6 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void OnNamesChange() {
-        Debug.Log(moveName1);
         move1.GetComponentInChildren<Text>().text = moveName1;
         move2.GetComponentInChildren<Text>().text = moveName2;
         move3.GetComponentInChildren<Text>().text = moveName3;

@@ -221,13 +221,13 @@ public class hosting : NetworkBehaviour {
         UIs[slot - 1].GetComponent<UIControl>().moveName2 = newDrag.moves[1].name;
         UIs[slot - 1].GetComponent<UIControl>().moveName3 = newDrag.moves[2].name;
         UIs[slot - 1].GetComponent<UIControl>().moveName4 = newDrag.moves[3].name;
-        UIs[slot - 1].GetComponent<UIControl>().OnNamesChange();
+        //UIs[slot - 1].GetComponent<UIControl>().OnNamesChange();
 
         UIs[slot - 1].GetComponent<UIControl>().moveIndex1 = findMoveIndex(newDrag.moves[0]);
         UIs[slot - 1].GetComponent<UIControl>().moveIndex2 = findMoveIndex(newDrag.moves[1]);
         UIs[slot - 1].GetComponent<UIControl>().moveIndex3 = findMoveIndex(newDrag.moves[2]);
         UIs[slot - 1].GetComponent<UIControl>().moveIndex4 = findMoveIndex(newDrag.moves[3]);
-        UIs[slot - 1].GetComponent<UIControl>().OnIndeciesChange();
+        //UIs[slot - 1].GetComponent<UIControl>().OnIndeciesChange();
 
         UIs[slot - 1].GetComponent<UIControl>().changeName(newDrag.nickname);
     }
