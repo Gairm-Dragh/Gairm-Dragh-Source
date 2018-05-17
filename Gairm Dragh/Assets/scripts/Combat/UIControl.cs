@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIControl : NetworkBehaviour {
     public GameObject dragonName; //The text that holds the dragon name
 
-    [SyncVar(hook = "onTempChange")]
+    [SyncVar]
     public string command = ""; //The command for this slot
 
     public GameObject move1, move2, move3, move4; //The buttons with the moves
@@ -57,6 +57,7 @@ public class UIControl : NetworkBehaviour {
         return target;
     }
 
+    [Command]
     public void onTempChange(string com) {
         Debug.Log("Running the hook function.");
         command = com;
