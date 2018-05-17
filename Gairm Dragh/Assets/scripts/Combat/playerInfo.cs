@@ -16,6 +16,11 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
     public bool found = false; //Whether or not things are found
     GameObject blank; //Leave this blank
 
+    [Command]
+    public void CmdChangeCommand(string command, int slot) {
+        processing.GetComponent<hosting>().UIs[slot - 1].GetComponent<UIControl>().command = command;
+    }
+
     //creates a random team of dragons to initialize into a player
     public void randomTeam() {
         //setting the names

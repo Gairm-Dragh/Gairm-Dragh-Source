@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIControl : NetworkBehaviour {
     public GameObject dragonName; //The text that holds the dragon name
@@ -85,6 +86,14 @@ public class UIControl : NetworkBehaviour {
         }
 
         Debug.Log("Got temp");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject play in players) {
+            if (play.GetComponent<playerInfo>().playerName == globals.name) {
+                play.GetComponent<playerInfo>().CmdChangeCommand(temp, slot);
+            }
+        }
+
         CmdonTempChange(temp);
     }
 

@@ -14,7 +14,7 @@ public class hosting : NetworkBehaviour {
     public GameObject x1, x2, x3, x4, x5, x6, x7, x8; //The xs
     public GameObject health1, health2, health3, health4, health5, health6, health7, health8; //The health bars
     public GameObject processing; //The background processing stuff
-    GameObject[] UIs = new GameObject[8];
+    public GameObject[] UIs = new GameObject[8];
     GameObject[] dragons = new GameObject[8];
     GameObject[] xs = new GameObject[8];
     List<player> team1;
