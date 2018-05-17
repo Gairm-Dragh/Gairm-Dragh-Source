@@ -89,11 +89,13 @@ public class UIControl : NetworkBehaviour {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject play in players) {
+            Debug.Log("We found some objects");
             if (play.GetComponent<playerInfo>().playerName == globals.name) {
                 play.GetComponent<playerInfo>().CmdChangeCommand(temp, slot);
             }
         }
-        CmdonTempChange(temp);
+
+        //CmdonTempChange(temp);
     }
 
     // Use this for initialization
