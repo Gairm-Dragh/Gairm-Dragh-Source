@@ -240,7 +240,6 @@ public class hosting : NetworkBehaviour {
             }
 
             setup = true;
-            labeled = false;
         }
 
         commands = checkReady();
