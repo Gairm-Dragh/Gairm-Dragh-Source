@@ -90,9 +90,12 @@ public class UIControl : NetworkBehaviour {
 
         foreach (GameObject play in players) {
             Debug.Log("We found some objects");
+            Debug.Log(globals.name);
+            Debug.Log(play.GetComponent<playerInfo>().playerName);
             if (play.GetComponent<playerInfo>().playerName == globals.name) {
                 Debug.Log("One matches, running command");
                 play.GetComponent<playerInfo>().CmdChangeCommand(temp, slot);
+                break;
             }
         }
 
