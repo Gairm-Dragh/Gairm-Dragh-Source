@@ -18,6 +18,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
 
     [Command]
     public void CmdChangeCommand(string command, int slot) {
+        Debug.Log("Command is being run");
         processing.GetComponent<hosting>().UIs[slot - 1].GetComponent<UIControl>().command = command;
     }
 

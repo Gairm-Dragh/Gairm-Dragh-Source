@@ -91,6 +91,7 @@ public class UIControl : NetworkBehaviour {
         foreach (GameObject play in players) {
             Debug.Log("We found some objects");
             if (play.GetComponent<playerInfo>().playerName == globals.name) {
+                Debug.Log("One matches, running command");
                 play.GetComponent<playerInfo>().CmdChangeCommand(temp, slot);
             }
         }
