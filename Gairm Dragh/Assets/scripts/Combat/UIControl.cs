@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIControl : NetworkBehaviour {
     public GameObject dragonName; //The text that holds the dragon name
 
-    [SyncVar]
+    [SyncVar(hook = "onTempChange")]
     public string command = ""; //The command for this slot
 
     public GameObject move1, move2, move3, move4; //The buttons with the moves
@@ -57,6 +57,10 @@ public class UIControl : NetworkBehaviour {
         return target;
     }
 
+    public void onTempChange(string com) {
+        command = com;
+    }
+
     public void onTemp(int commandIndex) {
         temp = ""; //The temporary command, we don't changecommand until filled out
 
@@ -76,10 +80,9 @@ public class UIControl : NetworkBehaviour {
 
                 temp += getRandomTarget();
             }
-
         }
 
-        command = temp;
+        onTempChange(temp);
     }
 
     // Use this for initialization
