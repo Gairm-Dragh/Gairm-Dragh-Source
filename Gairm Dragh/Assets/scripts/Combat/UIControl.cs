@@ -130,6 +130,16 @@ public class UIControl : NetworkBehaviour {
         commandList[5] = switch2;
         commandList[6] = switch3;
         commandList[7] = switch4;
+
+        moveNames.Add("");
+        moveNames.Add("");
+        moveNames.Add("");
+        moveNames.Add("");
+
+        moveIndecies.Add(0);
+        moveIndecies.Add(0);
+        moveIndecies.Add(0);
+        moveIndecies.Add(0);
     }
 
     // Update is called once per frame
