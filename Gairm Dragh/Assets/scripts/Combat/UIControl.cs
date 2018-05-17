@@ -58,6 +58,7 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void onTempChange(string com) {
+        Debug.Log("Running the hook function.");
         command = com;
     }
 
@@ -82,6 +83,7 @@ public class UIControl : NetworkBehaviour {
             }
         }
 
+        Debug.Log("Got temp");
         onTempChange(temp);
     }
 
