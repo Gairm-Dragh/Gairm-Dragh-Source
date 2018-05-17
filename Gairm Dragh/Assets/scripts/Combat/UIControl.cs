@@ -93,7 +93,6 @@ public class UIControl : NetworkBehaviour {
                 play.GetComponent<playerInfo>().CmdChangeCommand(temp, slot);
             }
         }
-
         CmdonTempChange(temp);
     }
 
