@@ -216,7 +216,19 @@ public class hosting : NetworkBehaviour {
     public void switchDragons(int slot, Dragon newDrag) {
         dragons[slot - 1].GetComponent<dragonControl>().type = newDrag.type.name;
         dragons[slot - 1].GetComponent<dragonControl>().name = newDrag.nickname;
-        UIs[slot - 1].GetComponent<UIControl>().updateMoves(newDrag.moves[0].name, newDrag.moves[1].name, newDrag.moves[2].name, newDrag.moves[3].name, findMoveIndex(newDrag.moves[0]), findMoveIndex(newDrag.moves[1]), findMoveIndex(newDrag.moves[2]), findMoveIndex(newDrag.moves[3]));
+
+        UIs[slot - 1].GetComponent<UIControl>().moveNames[0] = newDrag.moves[0].name;
+        UIs[slot - 1].GetComponent<UIControl>().moveNames[1] = newDrag.moves[1].name;
+        UIs[slot - 1].GetComponent<UIControl>().moveNames[2] = newDrag.moves[2].name;
+        UIs[slot - 1].GetComponent<UIControl>().moveNames[3] = newDrag.moves[3].name;
+        UIs[slot - 1].GetComponent<UIControl>().OnNamesChange();
+
+        UIs[slot - 1].GetComponent<UIControl>().moveIndecies[0] = findMoveIndex(newDrag.moves[0]);
+        UIs[slot - 1].GetComponent<UIControl>().moveIndecies[1] = findMoveIndex(newDrag.moves[1]);
+        UIs[slot - 1].GetComponent<UIControl>().moveIndecies[2] = findMoveIndex(newDrag.moves[2]);
+        UIs[slot - 1].GetComponent<UIControl>().moveIndecies[3] = findMoveIndex(newDrag.moves[3]);
+        UIs[slot - 1].GetComponent<UIControl>().OnIndeciesChange();
+
         UIs[slot - 1].GetComponent<UIControl>().changeName(newDrag.nickname);
     }
 

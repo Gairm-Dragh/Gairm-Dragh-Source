@@ -20,6 +20,10 @@ public class UIControl : NetworkBehaviour {
     public int slot; //The number of this slot
     public int team; //The team the dragon is on
 
+    public SyncList<string> moveNames = new SyncListString();
+
+    public SyncList<int> moveIndecies = new SyncListInt();
+
     [SyncVar(hook = "OnOwnerChange")]
     public string owner; //The person who controls this UI
 
@@ -102,15 +106,18 @@ public class UIControl : NetworkBehaviour {
         //CmdonTempChange(temp);
     }
 
-    public void updateMoves(string moveA, string moveB, string moveC, string moveD, int moveIA, int moveIB, int moveIC, int moveID) {
-        move1.GetComponent<command>().index = moveIA;
-        move2.GetComponent<command>().index = moveIB;
-        move3.GetComponent<command>().index = moveIC;
-        move4.GetComponent<command>().index = moveID;
-        move1.GetComponent<Text>().text = moveA;
-        move2.GetComponent<Text>().text = moveB;
-        move3.GetComponent<Text>().text = moveC;
-        move4.GetComponent<Text>().text = moveD;
+    public void OnNamesChange() {
+        move1.GetComponent<Text>().text = moveNames[0];
+        move2.GetComponent<Text>().text = moveNames[1];
+        move3.GetComponent<Text>().text = moveNames[2];
+        move4.GetComponent<Text>().text = moveNames[3];
+    }
+
+    public void OnIndeciesChange() {
+        move1.GetComponent<command>().index = moveIndecies[0];
+        move2.GetComponent<command>().index = moveIndecies[1];
+        move3.GetComponent<command>().index = moveIndecies[2];
+        move4.GetComponent<command>().index = moveIndecies[3];
     }
 
     // Use this for initialization
@@ -127,6 +134,5 @@ public class UIControl : NetworkBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
     }
 }
