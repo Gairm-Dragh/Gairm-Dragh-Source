@@ -391,7 +391,7 @@ public class hosting : NetworkBehaviour {
         }
 
         //distributes the labels
-        if (labeled) {
+        if (labeled && !setup) {
             for (int i = 0; i < UIs.Length; i++) {
                 if (UIs[i].GetComponent<UIControl>().owner == globals.name) {
                     UIs[i].SetActive(true);
