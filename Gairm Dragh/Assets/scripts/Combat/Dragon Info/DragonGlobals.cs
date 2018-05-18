@@ -10,7 +10,7 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
     public static Type Fire, Water, Earth, Air, Angelic, Demonic, Balance, Grass, Toxic; //The types
     public static Type[] types = new Type[9]; //array to hold all of the types
     public static Dragon[] dragons; //array of al the dragons, size will depend on how many players there are
-    public static move[] moves = new move[25];
+    public static move[] moves = new move[24];
 
     static public void initTypes() {
         //Initializing the types
@@ -126,28 +126,28 @@ public static class DragonGlobals{ //this is the set for keeping track of the ge
         //putting the moves in the array
         moves[0] = Bite;
         moves[1] = FeintAttack;
-        moves[3] = Crunch;
-        moves[4] = Thundershock;
-        moves[5] = Thunderbolt;
-        moves[6] = Thunder;
-        moves[7] = Ember;
-        moves[8] = Flamethrower;
-        moves[9] = Overheat;
-        moves[10] = VineWhip;
-        moves[11] = RazorLeaf;
-        moves[12] = MagicalLeaf;
-        moves[13] = LeafBlade;
-        moves[14] = Earthquake;
-        moves[15] = MudShot;
-        moves[16] = PoisonSting;
-        moves[17] = Acid;
-        moves[18] = Smite;
-        moves[19] = HolyWater;
-        moves[20] = Neutralize;
-        moves[21] = Unbalance;
-        moves[22] = HydroPump;
-        moves[23] = BubbleBeam;
-        moves[24] = HydroCannon;
+        moves[2] = Crunch;
+        moves[3] = Thundershock;
+        moves[4] = Thunderbolt;
+        moves[5] = Thunder;
+        moves[6] = Ember;
+        moves[7] = Flamethrower;
+        moves[8] = Overheat;
+        moves[9] = VineWhip;
+        moves[10] = RazorLeaf;
+        moves[11] = MagicalLeaf;
+        moves[12] = LeafBlade;
+        moves[13] = Earthquake;
+        moves[14] = MudShot;
+        moves[15] = PoisonSting;
+        moves[16] = Acid;
+        moves[17] = Smite;
+        moves[18] = HolyWater;
+        moves[19] = Neutralize;
+        moves[20] = Unbalance;
+        moves[21] = HydroPump;
+        moves[22] = BubbleBeam;
+        moves[23] = HydroCannon;
 
         globals.moves = moves;
     }
