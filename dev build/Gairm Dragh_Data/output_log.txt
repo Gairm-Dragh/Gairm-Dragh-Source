@@ -2,10 +2,10 @@ Mono path[0] = 'H:/unity projects/Gairm-Dragh-Source/dev build/Gairm Dragh_Data/
 Mono path[1] = 'H:/unity projects/Gairm-Dragh-Source/dev build/Gairm Dragh_Data/Mono'
 Mono config path = 'H:/unity projects/Gairm-Dragh-Source/dev build/Gairm Dragh_Data/Mono/etc'
 PlayerConnection initialized from H:/unity projects/Gairm-Dragh-Source/dev build/Gairm Dragh_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55509
-Multi-casting "[IP] 10.198.209.162 [Port] 55509 [Flags] 2 [Guid] 611396333 [EditorId] 3570555954 [Version] 1048832 [Id] WindowsPlayer(IGD138866) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55509]
-PlayerConnection already initialized - listening to [0.0.0.0:55509]
+PlayerConnection initialized network socket : 0.0.0.0 55278
+Multi-casting "[IP] 10.198.209.162 [Port] 55278 [Flags] 2 [Guid] 4141272274 [EditorId] 3570555954 [Version] 1048832 [Id] WindowsPlayer(IGD138866) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55278]
+PlayerConnection already initialized - listening to [0.0.0.0:55278]
 Initialize engine version: 5.5.1f1 (88d00a7498cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -25,7 +25,7 @@ Platform assembly: H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Da
 Loading H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  1.778 seconds
+- Completed reload, in 12.102 seconds
 Platform assembly: H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: H:\unity projects\Gairm-Dragh-Source\dev build\Gairm Dragh_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -33,14 +33,14 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.952111 ms
+UnloadTime: 1007.166138 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 81.395653 ms
+UnloadTime: 88.771881 ms
 System memory in use before: 17.6 MB.
 System memory in use after: 17.7 MB.
 
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 675.
-Total: 1.944337 ms (FindLiveObjects: 0.036957 ms CreateObjectMapping: 0.034253 ms MarkObjects: 1.853896 ms  DeleteObjects: 0.012018 ms)
+Total: 1.867417 ms (FindLiveObjects: 0.032450 ms CreateObjectMapping: 0.021333 ms MarkObjects: 1.796506 ms  DeleteObjects: 0.012619 ms)
 
 MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
@@ -110,13 +110,94 @@ UnityEngine.Networking.NetworkLobbyPlayer:Start() (at C:\buildslave\unity\build\
 (Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/NetworkLobbyPlayer.cs Line: 24)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.272225 ms
+UnloadTime: 0.469934 ms
 System memory in use before: 24.6 MB.
 System memory in use after: 24.7 MB.
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 2157.
-Total: 1.328675 ms (FindLiveObjects: 0.102159 ms CreateObjectMapping: 0.033051 ms MarkObjects: 1.185351 ms  DeleteObjects: 0.006610 ms)
+Total: 1.446459 ms (FindLiveObjects: 0.175774 ms CreateObjectMapping: 0.048676 ms MarkObjects: 1.214497 ms  DeleteObjects: 0.006009 ms)
+
+Player2
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:398)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 398)
+
+
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+Player1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+Player1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+Player1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
+
+Player1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+hosting:Update() (at H:\unity projects\Gairm-Dragh-Source\Gairm Dragh\Assets\scripts\Combat\hosting.cs:401)
+ 
+(Filename: H:/unity projects/Gairm-Dragh-Source/Gairm Dragh/Assets/scripts/Combat/hosting.cs Line: 401)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3808 -> priority: 1 
-  Thread -> id: 250c -> priority: 1 
+  Thread -> id: 24f8 -> priority: 1 
+  Thread -> id: 3730 -> priority: 1 

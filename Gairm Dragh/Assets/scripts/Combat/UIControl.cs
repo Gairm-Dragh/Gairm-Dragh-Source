@@ -44,12 +44,8 @@ public class UIControl : NetworkBehaviour {
     [SyncVar(hook = "OnIndeciesChange")]
     public int moveIndex4;
 
-    [SyncVar(hook = "OnOwnerChange")]
+    [SyncVar]
     public string owner; //The person who controls this UI
-
-    public void OnOwnerChange(string newOwner) {
-        owner = newOwner;
-    }
 
     public void changeName(string newName) {
         dragonName.GetComponent<Text>().text = newName;
