@@ -21,16 +21,16 @@ public class UIControl : NetworkBehaviour {
     public int team; //The team the dragon is on
 
     [SyncVar]
-    public string moveName1;
+    public string moveName1 = "";
 
     [SyncVar]
-    public string moveName2;
+    public string moveName2 = "";
 
     [SyncVar]
-    public string moveName3;
+    public string moveName3 = "";
 
     [SyncVar(hook = "OnNamesChange")]
-    public string moveName4;
+    public string moveName4 = "";
 
     [SyncVar]
     public int moveIndex1;

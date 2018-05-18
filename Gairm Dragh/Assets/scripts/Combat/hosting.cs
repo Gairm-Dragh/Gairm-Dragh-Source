@@ -217,6 +217,9 @@ public class hosting : NetworkBehaviour {
         dragons[slot - 1].GetComponent<dragonControl>().type = newDrag.type.name;
         dragons[slot - 1].GetComponent<dragonControl>().name = newDrag.nickname;
 
+        //Debug.Log(newDrag.moves[0].name);
+        //Debug.Log(newDrag.moves[2].name);
+
         UIs[slot - 1].GetComponent<UIControl>().moveName1 = newDrag.moves[0].name;
         UIs[slot - 1].GetComponent<UIControl>().moveName2 = newDrag.moves[1].name;
         UIs[slot - 1].GetComponent<UIControl>().moveName3 = newDrag.moves[2].name;
@@ -319,7 +322,10 @@ public class hosting : NetworkBehaviour {
 
                     //edits health bars and faints if at 0
                     if (dragons[i].GetComponent<dragonControl>().stats.currentHP == 0) {
-
+                        UI.GetComponent<UIControl>().dead = true;
+                    }
+                    else {
+                        dragons[i].GetComponent<dragonControl>().healthPercent = dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.currentHP / dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.maxHP;
                     }
                 }
             }

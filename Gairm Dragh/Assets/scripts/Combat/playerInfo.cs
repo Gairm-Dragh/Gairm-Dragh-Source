@@ -179,7 +179,7 @@ public class playerInfo : NetworkBehaviour { //This class holds the information 
             randomMoves[i] = new move[5];
 
             for (int j = 0; j < randomMoves[i].Length; j++) {
-                randomMoves[i][j] = allMoves[Random.Range(0, allMoves.Length - 1)];
+                randomMoves[i][j] = allMoves[Random.Range(0, allMoves.Length - 2)];
             }
         }
 
