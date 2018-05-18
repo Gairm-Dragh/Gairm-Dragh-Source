@@ -243,6 +243,89 @@ public class hosting : NetworkBehaviour {
         return true;
     }
 
+    void damageCheck(int crit, move move, Dragon target, Dragon user) {
+        float typage = 1f; //The type (dis)advantage
+
+        foreach (Type weakness in target.type.weaknesses) {
+            if (weakness == move.type) {
+                typage = 2f;
+                break;
+            }
+        }
+
+        foreach (Type resistance in target.type.resistances) {
+            if (resistance == move.type) {
+                typage = 0.5f;
+                break;
+            }
+        }
+
+        int ATK = 0;
+        int DEF = 0;
+        float STAB = 1f;
+
+        //select physical or special stats
+        if (move.physical) {
+            ATK = user.ATK;
+            DEF = target.DEF;
+        }
+        else {
+            ATK = user.SPA;
+            DEF = target.SPD;
+        }
+
+        //check for stab
+        if (move.type == user.type) {
+            STAB = 1.5f;
+        }
+
+        target.currentHP -= Mathf.FloorToInt(((((((2 * user.level) / 5) + 2) * move.power * ATK / DEF) / 50) + 2) * crit * STAB * typage);
+    }
+
+    void critCheck(move move, Dragon target, Dragon user) {
+        if (Random.Range(0, 100) > 94) {
+            damageCheck(2, move, target, user);
+        }
+        else {
+            damageCheck(1, move, target, user);
+        }
+    }
+
+    void accCheck(move move, Dragon target, Dragon user) {
+        //check if the move will auto hit
+        if (move.accuracy == 0) {
+            critCheck(move, target, user);
+        }
+        else if (Random.Range(0, 100) > move.accuracy) {
+            critCheck(move, target, user);
+        }
+    }
+
+    void commandsGo() {
+        //Go through each UI to determine result
+        for (int i = 0; i < UIs.Length; i++) {
+            GameObject UI = UIs[i];
+            string command = UI.GetComponent<UIControl>().command;
+
+            //check if it's dead or not
+            if (command != "true") {
+                //get each part
+                string[] commandSplice = command.Split(',');
+
+                //fight
+                if (commandSplice[1] != "true") {
+                    //goes through the stuff to hit
+                    accCheck(globals.moves[int.Parse(commandSplice[2])], dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats, dragons[i].GetComponent<dragonControl>().stats);
+
+                    //edits health bars and faints if at 0
+                    if (dragons[i].GetComponent<dragonControl>().stats.currentHP == 0) {
+
+                    }
+                }
+            }
+        }
+    }
+
     // Use this for initialization
     void Start() {
         //Debug.Log(globals.name);
@@ -319,6 +402,7 @@ public class hosting : NetworkBehaviour {
         //processes the commands if all of them are no longer blank
         if (commands) {
             //TODO: actually process the commands
+            commandsGo();
 
             //Blanks all the commands for next time
             for (int i = 0; i < UIs.Length; i++) {

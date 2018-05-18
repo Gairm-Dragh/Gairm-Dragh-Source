@@ -26,8 +26,10 @@ public class dragonControl : NetworkBehaviour {
     public GameObject UI; //The UI this dragon goes to
     public int num; //The number of this slot
     public int healthPercentLast; //The last health percent we changed to
+    public Dragon stats; //The dragon currently in this slot
 
     public void changeDragon(Dragon newDragon) {
+        stats = newDragon;
         type = newDragon.type.name;
         dragonName = newDragon.nickname;
     }

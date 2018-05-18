@@ -127,6 +127,7 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void OnNamesChange(string temp) {
+        moveName4 = temp;
         move1.GetComponentInChildren<Text>().text = moveName1;
         move2.GetComponentInChildren<Text>().text = moveName2;
         move3.GetComponentInChildren<Text>().text = moveName3;
@@ -134,6 +135,7 @@ public class UIControl : NetworkBehaviour {
     }
 
     public void OnIndeciesChange(int temp) {
+        moveIndex4 = temp;
         move1.GetComponent<command>().index = moveIndex1;
         move2.GetComponent<command>().index = moveIndex2;
         move3.GetComponent<command>().index = moveIndex3;
