@@ -330,7 +330,7 @@ public class hosting : NetworkBehaviour {
                         UI.GetComponent<UIControl>().dead = true;
                     }
                     else {
-                        dragons[i].GetComponent<dragonControl>().healthPercent = dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.currentHP / dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.maxHP * 100;
+                        dragons[i].GetComponent<dragonControl>().healthPercent = 100 * dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.currentHP / dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.maxHP;
                     }
                 }
             }
