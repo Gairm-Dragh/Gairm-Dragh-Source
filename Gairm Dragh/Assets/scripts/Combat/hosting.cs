@@ -217,8 +217,10 @@ public class hosting : NetworkBehaviour {
         dragons[slot - 1].GetComponent<dragonControl>().type = newDrag.type.name;
         dragons[slot - 1].GetComponent<dragonControl>().name = newDrag.nickname;
 
-        //Debug.Log(newDrag.moves[0].name);
-        //Debug.Log(newDrag.moves[2].name);
+        newDrag.moves[0].name = newDrag.moves[0].name;
+        newDrag.moves[1].name = newDrag.moves[1].name;
+        newDrag.moves[2].name = newDrag.moves[2].name;
+        newDrag.moves[3].name = newDrag.moves[3].name;
 
         UIs[slot - 1].GetComponent<UIControl>().moveName1 = newDrag.moves[0].name;
         UIs[slot - 1].GetComponent<UIControl>().moveName2 = newDrag.moves[1].name;
@@ -325,7 +327,7 @@ public class hosting : NetworkBehaviour {
                         UI.GetComponent<UIControl>().dead = true;
                     }
                     else {
-                        dragons[i].GetComponent<dragonControl>().healthPercent = dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.currentHP / dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.maxHP;
+                        dragons[i].GetComponent<dragonControl>().healthPercent = dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.currentHP / dragons[int.Parse(commandSplice[3])].GetComponent<dragonControl>().stats.maxHP * 100;
                     }
                 }
             }
